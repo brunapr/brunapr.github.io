@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { FiGithub } from 'react-icons/fi';
 import { SiLinkedin } from 'react-icons/si';
 import './styles.css';
-import Hover from '../Cursor';
+import Hover from '../cursor';
 import Dropdown from './dropdown/dropdown';
 
 export default function Header() {
@@ -28,10 +28,10 @@ export default function Header() {
     <div className="header">
       <div className="icons">
         <Hover>
-          <a href='https://github.com/brunapr' target="_blank"><FiGithub/></a>
+          <a href='https://github.com/brunapr' target="_blank"><FiGithub size={26}/></a>
         </Hover>
         <Hover>
-          <a href='https://www.linkedin.com/in/prbruna/' target="_blank"><SiLinkedin/></a>
+          <a href='https://www.linkedin.com/in/prbruna/' target="_blank"><SiLinkedin size={26}/></a>
         </Hover>
       </div>
       <Hover>

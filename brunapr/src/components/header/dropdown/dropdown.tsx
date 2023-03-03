@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Hover from "../../Cursor";
+import Hover from "../../cursor";
 import './styles.css';
 
 export default function Dropdown() {
@@ -9,16 +9,16 @@ export default function Dropdown() {
   return(
     <div className="dropdown">
       <Hover>
-        <div className="dropdown-button">Home</div>
+        <div className="dropdown-button">home</div>
       </Hover>
       <Hover>
-        <div className="dropdown-button">About Me</div>
+        <div className="dropdown-button">about me</div>
       </Hover>
       <Hover>
-        <div className="dropdown-button">Projects</div>
+        <div className="dropdown-button">projects</div>
       </Hover>
       <Hover>
-        <div className="dropdown-button">Contact</div>
+        <div className="dropdown-button">contact</div>
       </Hover>
       
       <div className="dropdown-language">

@@ -1,0 +1,55 @@
+.home {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-paper {
+  text-align: center;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.home-paper span {
+  background-color: #fff;
+  width: 15vw;
+  max-width: 120px;
+  height: 15vw;
+  max-height: 120px;
+
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Montserrat";
+  color: #b9b9b9;
+  font-size: calc(22px + 2vmin);
+  float: left;
+  transition: 0.5s;
+}
+
+.home-paper:hover span:nth-child(odd) {
+  transform: skewY(-15deg);
+  color: #b5b5b5;
+  box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.1);
+}
+
+.home-paper:hover span:nth-child(even) {
+  transform: skewY(15deg);
+  color: #b5b5b5;
+  box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.1);
+}
+
+.home-paper:hover {
+  transform: rotateX(35deg);
+}
+
+.home-description {
+  margin-top: 40px;
+  font-size: 16px;
+  text-align: center;
+}

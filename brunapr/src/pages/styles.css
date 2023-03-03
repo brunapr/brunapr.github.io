@@ -1,0 +1,12 @@
+.slide-wrapper {
+  margin-left: 100px;
+  margin-right: 30px;
+  height: 75vh;
+  transition: 0.5s;
+}
+
+@media screen and (max-width: 1200px) {
+  .slide-wrapper {
+    margin-left: 35px;
+  }
+}

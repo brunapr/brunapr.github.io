@@ -26,14 +26,14 @@
 }
 
 .dropdown-language {
-  width: 150px;
-
+  width: 154px;
+  font-family: "Montserrat-Bold";
   display: flex;
 }
 
 .dropdown-language .language {
-  font-size: 16px;
-  width: 75px;
+  font-size: 14px;
+  width: 77px;
   height: 40px;
   color: #232323;
   border-bottom: 2px solid #232323;
@@ -44,6 +44,6 @@
 }
 
 .dropdown-language .opacity {
-  border-bottom: 2px solid #929292;
-  color: #929292;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.2);
 }
