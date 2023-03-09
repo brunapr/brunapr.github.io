@@ -24,10 +24,10 @@
   display: block;
   position: relative;
   content: " ";
-  color: #DAD4FF;
+  color: var(--bg-color);
   top: 8px;
   transition: 0.2s;
-  background-color: #232323;
+  background-color: var(--text-color);
 }
 
 .dots-wrapper .dot-grow::before {
@@ -41,4 +41,8 @@
     bottom: 10px;
     transform: rotate(-90deg);
   }
+}
+
+.hidden {
+  overflow: hidden;
 }

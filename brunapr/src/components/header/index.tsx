@@ -3,9 +3,15 @@ import { FiGithub } from 'react-icons/fi';
 import { SiLinkedin } from 'react-icons/si';
 import './styles.css';
 import Hover from '../cursor';
-import Dropdown from './dropdown/dropdown';
+import Dropdown from './dropdown/index';
 
-export default function Header() {
+export default function Header(
+    props: {
+      slide: number,
+      setSlide: React.Dispatch<React.SetStateAction<number>>,
+    }
+  )  
+{
   const [ click, setClick ] = useState(false);
 
   useEffect(()=>{
@@ -42,7 +48,12 @@ export default function Header() {
       </Hover>
 
       <div id="dropdown" className="dropdown-wrapper">
-        <Dropdown/>
+        <Dropdown 
+          click={click} 
+          setClick={setClick}
+          slide={props.slide}
+          setSlide={props.setSlide}
+        />
       </div>
     </div>
   );

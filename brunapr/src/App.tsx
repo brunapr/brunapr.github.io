@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import './utils/variables.css';
 import Header from './components/header';
 import Main from './pages';
 import Cursor from './components/cursor/cursor';
@@ -16,9 +17,9 @@ function App() {
   return (
     <div className="app">
       <div className="wrapper">
-        <Header/>
+        <Header slide={slide} setSlide={setSlide}/>
         <SlideDots slide={slide} setSlide={setSlide}/>
-        <Main slide={slide}/>
+        <Main slide={slide} setSlide={setSlide}/>
       </div>
       <Cursor/>
     </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { useContext } from "react";
-import useMousePosition from "../../utils/useMousePosition";
+import useMousePosition from "../../hooks/useMousePosition";
 import { MouseContext } from "../../contexts/mouseContext"; 
 import './styles.css';
 

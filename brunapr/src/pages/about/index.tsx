@@ -1,5 +1,7 @@
+import './styles.css';
+
 export default function About() {
   return(
-    <div className="about"></div>
+    <div id="about" className="slide-child-wrapper">ABOUT</div>
   );
 }
