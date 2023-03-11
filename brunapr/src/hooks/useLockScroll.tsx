@@ -8,14 +8,12 @@ export const useLockScroll = () => {
     forceRerender();
   }, []);
 
-  const slide = document.getElementById("slide");
-
-  const lockScroll = React.useCallback(() => { 
-    slide!.classList.add("hidden");
+  const lockScroll = React.useCallback((element: HTMLElement) => { 
+    element.classList.add("hidden");
   }, [])
 
-  const unlockScroll = React.useCallback(() => { 
-    slide!.classList.remove("hidden");
+  const unlockScroll = React.useCallback((element: HTMLElement) => { 
+    element.classList.remove("hidden");
   }, []);
 
   return {
