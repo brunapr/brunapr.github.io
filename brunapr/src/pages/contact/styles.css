@@ -1,0 +1,122 @@
+.contact-wrapper {
+  box-sizing: border-box;
+  padding: 40px;
+  background-color: var(--box-color);
+
+  width: 20vw;
+  min-width: 250px;
+  height: 28vh;
+  min-height: 200px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-title {
+  margin: -60px 0 -5px 0;
+  width: 20vw;
+  min-width: 250px;
+}
+
+.contact-texts {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-texts > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 10px;
+}
+
+.contact-texts > div > span {
+  font-size: 16px;
+}
+
+.contact-texts > div > div > svg {
+  margin-top: 5px;
+}
+
+.contact-links {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 10px;
+
+  position: relative;
+}
+
+.contact-links .round-link {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--text-color);
+  border-radius: 50px;
+  margin: 0px 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: 0.5s;
+}
+
+.contact-links .round-link:hover {
+  background-color: var(--text-color);
+  color: var(--box-color);
+}
+
+.tooltiptext {
+  opacity: 0;
+  background-color: var(--text-color);
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  padding: 5px 0;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+
+  width: 80px;
+  bottom: 60px;
+  /* left: 50%;
+  margin-left: -40px;  */
+  transition: 0.2s;
+}
+
+.tooltiptext::before {
+  width: 10px;
+  height: 10px;
+  content: " ";
+  background-color: var(--text-color);
+  display: inline-block;
+  position: absolute;
+  bottom: -5px;
+  right: 35px;
+  transform: rotate(45deg);
+}
+
+.contact-text-link .tooltiptext {
+  left: 80px;
+  margin-left: -40px;
+  bottom: 5px;
+}
+
+.contact-text-link .tooltiptext::before {
+  left: -5px;
+  bottom: 8px;
+}
+
+.contact-text-link {
+  position: relative;
+}
+
+.round-link:hover .tooltiptext,
+.contact-text-link:hover .tooltiptext {
+  opacity: 1;
+}

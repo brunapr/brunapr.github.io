@@ -25,6 +25,14 @@
   transition: 0.5s;
 }
 
+.main-slide > * > h1 {
+  font-family: "Montserrat";
+  text-transform: uppercase;
+  font-style: italic;
+  font-size: calc(16px + 2vmin);
+  letter-spacing: 0.2em;
+}
+
 .main-slide {
   display: flex;
   flex-direction: column;

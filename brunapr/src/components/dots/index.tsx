@@ -1,7 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import useForceRerender from '../../hooks/useForceRerender';
-import { useLockScroll } from '../../hooks/useLockScroll';
 import useWindowDimensions from '../../hooks/useWindowDimensions';
 import './styles.css';
 
@@ -12,41 +11,13 @@ export default function SlideDots(
     }
   ) 
 {
-  // const slide = document.getElementById("slide");
 
   const [ flag, setFlag ] = useState(false);
-  const { lockScroll, unlockScroll } = useLockScroll();
   const [ scrollDimension, setScrollDimension ] = useState(0);
   const [ scroll, setScroll ] = useState(0);
   
   const forceRerender = useForceRerender();
   const { width, height } = useWindowDimensions();
-
-  // useEffect(() => {
-  //   const slide = document.getElementById("slide");
-  //   width > 1200 ? 
-  //   setScrollDimension(slide!.scrollHeight) :
-  //   setScrollDimension(slide!.scrollWidth);
-
-  //   if(flag) {
-  //     const slide = document.getElementById("slide");
-
-  //     setScroll(scrollDimension/4);
-
-  //     slide!.addEventListener("scroll", () => {
-  //       var scrolled = width > 1200 ? slide!.scrollTop : slide!.scrollLeft;
-  //       if(scrolled >= 0 && scrolled <= scroll/2) {
-  //         props.setSlide(1);
-  //       } else if(scrolled > scroll/2 && scrolled <= scroll+100) {
-  //         props.setSlide(2);
-  //       } else if(scrolled > scroll+100 && scrolled <= (scroll*2)+100) {
-  //         props.setSlide(3);
-  //       } else if(scrolled > (scroll*2)+100 && scrolled <= (scroll*3)+100) {
-  //         props.setSlide(4);
-  //       }
-  //     })
-  //   }
-  // }, [width, height])
 
   const slide = document.getElementById("slide");
 
@@ -66,7 +37,6 @@ export default function SlideDots(
           clearTimeout(timer);        
         }
         timer = setTimeout(function() {
-          // do something
           var scrolled = width > 1200 ? slide.scrollTop : slide.scrollLeft;
           if(scrolled >= 0 && scrolled <= scroll/2 - 10) {
             props.setSlide(1);
