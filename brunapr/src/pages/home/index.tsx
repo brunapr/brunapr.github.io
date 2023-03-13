@@ -1,5 +1,6 @@
 import Hover from '../../components/cursor';
 import useWindowDimensions from '../../hooks/useWindowDimensions';
+import Translate from '../../utils/translate';
 import './styles.css';
 
 export default function Home() {
@@ -14,11 +15,7 @@ export default function Home() {
         <span>N</span>
         <span>A</span>
       </div>
-      {
-        width > 360 ?
-        <div className="home-description">front-end developer and ui/ux designer</div> :
-        <div className="home-description">front-end developer <br/>and ui/ux designer</div>
-      }
+        <div className="home-description">{Translate("front-end developer and ui/ux designer")}</div>
     </div>
   );
 }

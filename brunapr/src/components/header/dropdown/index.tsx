@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { LanguageContext } from "../../../contexts/languageContext";
+import Translate from "../../../utils/translate";
 import Hover from "../../cursor";
 import './styles.css';
 
@@ -11,7 +13,7 @@ export default function Dropdown(
     }
   ) {
 
-  const [ lang, setLang ] = useState("PT-BR");
+  const { language, setLanguage } = useContext(LanguageContext);
 
   function goTo(slide: string) {
     props.setClick(false);
@@ -25,44 +27,49 @@ export default function Dropdown(
     });
   }
 
+  function handleLanguage(lang: string) {
+    setLanguage(lang);
+    localStorage.setItem("language", lang);
+  }
+
   return(
     <div className="dropdown">
       <Hover>
         <div 
           className="dropdown-button"
           onClick={() => {goTo("home")}}
-        >home</div>
+        >{Translate("home")}</div>
       </Hover>
       <Hover>
         <div 
           className="dropdown-button"
           onClick={() => {goTo("about")}}
-        >about me</div>
+        >{Translate("about me")}</div>
       </Hover>
       <Hover>
         <div 
           className="dropdown-button"
           onClick={() => {goTo("projects")}}
-        >projects</div>
+        >{Translate("projects")}</div>
       </Hover>
       <Hover>
         <div 
           className="dropdown-button"
           onClick={() => {goTo("contact")}}
-        >contact</div>
+        >{Translate("contact")}</div>
       </Hover>
       
       <div className="dropdown-language">
         <Hover>
           <div 
-            className={`language ${lang == 'ENG' && "opacity" }`} 
-            onClick={()=>{setLang("PT-BR")}}
+            className={`language ${language == 'en' && "opacity" }`} 
+            onClick={()=>{handleLanguage("pt")}}
           >PT-BR</div>
         </Hover>
         <Hover>
           <div 
-            className={`language ${lang == 'PT-BR' && "opacity" }`}
-            onClick={()=>{setLang("ENG")}}
+            className={`language ${language == 'pt' && "opacity" }`}
+            onClick={()=>{handleLanguage("en")}}
           >ENG</div>
         </Hover>
       </div>

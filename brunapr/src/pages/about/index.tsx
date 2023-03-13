@@ -1,40 +1,60 @@
+import { useContext } from 'react';
+import { LanguageContext } from '../../contexts/languageContext';
+import Translate from '../../utils/translate';
 import './styles.css';
 
 export default function About() {
+
+  const { language } = useContext(LanguageContext);
+
   return(
     <div id="about" className="slide-child-wrapper">
       <div className="about-me-wrapper">
         <div className="who-i-am">
-          <h1>Who I am</h1>
+          <h1>{Translate("who i am")}</h1>
           <div>
             <div className="basic-info">
               <div className="basic-info-content">
-                <h6>Basic</h6>
+                <h6>{Translate("basic")}</h6>
                 <span>— &nbsp; Bruna Ribeiro</span>
-                <span>— &nbsp; 22 anos</span>
-                <span>— &nbsp; Brasil</span>
+                <span>— &nbsp; {Translate("22 years old")}</span>
+                <span>— &nbsp; {Translate("brazil")}</span>
                 <span>— &nbsp; Rio de Janeiro, RJ</span>
-                <span>— &nbsp; Sagitário</span>
-                <span>— &nbsp; Ela/Dela</span>
+                <span>— &nbsp; {Translate("sagittarius")}</span>
+                <span>— &nbsp; {Translate("she/her")}</span>
               </div>
               <div className="who-i-am-img-wrapper"/>
             </div>
             <div className="history-info">
-              <h6>History</h6>
-              <p className="history-text">
-                I’m a <b>front-end developer</b> and <b>UI/UX designer </b> 
-                born in Brazil, Rio de Janeiro - RJ.
-                <br/>
-                Even though I was familiar with HTML/CSS since I was a teenager, I
-                only truly started to learn front-end when I was 19 years old,
-                after joining <b>EJCM</b>, a Junior Enterprise at my university, <b>UFRJ</b>.
-                <br/><br/>
-                I loved it from the start! For me, to see everything coming
-                together with my code was like <b>magic</b>! 
-              </p>
+              <h6>{Translate("how it started")}</h6>
+              {
+                language == "pt" ?
+                <p className="history-text">
+                  Eu sou uma <b>desenvolvedora front-end</b> e <b>designer de UI/UX </b> 
+                  nascida no Brasil, Rio de Janeiro - RJ.
+                  <br/>
+                  Apesar de ser familiar com HTML/CSS desde adolescente, eu
+                  apenas comecei a aprender front-end com 19 anos após entrar
+                  na <b>EJCM</b>, uma Empresa Júnior da minha faculdade, <b>UFRJ</b>.
+                  <br/><br/>
+                  Amei muito desde o começo! Para mim, ver tudo se encaixando
+                  junto no código é como <b>mágica</b>! 
+                </p> :
+                  <p className="history-text">
+                  I’m a <b>front-end developer</b> and <b>UI/UX designer </b> 
+                  born in Brazil, Rio de Janeiro - RJ.
+                  <br/>
+                  Even though I was familiar with HTML/CSS since I was a teenager, I
+                  only truly started to learn front-end when I was 19 years old,
+                  after joining <b>EJCM</b>, a Junior Enterprise at my university, <b>UFRJ</b>.
+                  <br/><br/>
+                  I loved it from the start! For me, to see everything coming
+                  together with my code is like <b>magic</b>! 
+                </p>
+              }
             </div>
             <div className="passion-info">
-              <h6>Passion</h6>
+              <h6>{Translate("love")}</h6>
               <div className="passion-list">
                 <div className="passion-first">
                   <div className="passion-item">
@@ -47,11 +67,11 @@ export default function About() {
                   </div>
                   <div className="passion-item">
                     <span>🦜</span>
-                    <span className="tooltiptext">my pets</span>
+                    <span className="tooltiptext">{Translate("my pets")}</span>
                   </div>
                   <div className="passion-item">
                     <span>🎮</span>
-                    <span className="tooltiptext">games</span>
+                    <span className="tooltiptext">{Translate("games")}</span>
                   </div>
                   <div className="passion-item">
                     <span>🔮</span>
@@ -59,7 +79,7 @@ export default function About() {
                   </div>
                   <div className="passion-item">
                     <span>🍰</span>
-                    <span className="tooltiptext">desserts</span>
+                    <span className="tooltiptext">{Translate("desserts")}</span>
                   </div>
                 </div>
                 {/* <div className="passion-second">
@@ -81,7 +101,7 @@ export default function About() {
           </div>
         </div>
         <div className="skillset">
-          <h1>Skills</h1>
+          <h1>{Translate("skills")}</h1>
           <div>
             <div className="skillset-icons">
               <div className="icons-row">

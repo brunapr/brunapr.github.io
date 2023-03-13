@@ -53,3 +53,13 @@ body {
   justify-content: center;
   position: relative;
 }
+
+.loading {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-color);
+  background-image: url(./assets/images/loading.gif);
+  background-repeat: no-repeat;
+  background-position: top;
+  z-index: 5;
+}

@@ -59,11 +59,13 @@
   align-items: center;
 
   opacity: 0;
+  visibility: hidden;
 }
 
 .expand {
   height: 100vh !important;
   opacity: 1;
+  visibility: visible;
 }
 
 .icons {

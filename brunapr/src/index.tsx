@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import LanguageProvider from './contexts/languageContext';
 import MouseContextProvider from './contexts/mouseContext';
 
 const root = ReactDOM.createRoot(
@@ -8,8 +9,10 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <MouseContextProvider>
-      <App />
-    </MouseContextProvider>
+    <LanguageProvider>
+      <MouseContextProvider>
+        <App />
+      </MouseContextProvider>
+    </LanguageProvider>
   </React.StrictMode>
 );
