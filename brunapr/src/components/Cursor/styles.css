@@ -38,8 +38,12 @@
   height: 42px;
 }
 
-@media screen and (max-width: 900px) {
+.hide-cursor {
+  opacity: 0;
+}
+
+/* @media screen and (max-width: 900px) {
   .dot, .ring {
     opacity: 0;
   }
-}
+} */

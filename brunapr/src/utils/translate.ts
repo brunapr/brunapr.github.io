@@ -47,7 +47,7 @@ export default function Translate(text: string) {
       case "open":
         return "abrir";
     }
-  } else if(language == "en") {
+  } else {
     switch (text) {
       case "front-end developer and ui/ux designer":
         return "front-end developer and ui/ux designer";

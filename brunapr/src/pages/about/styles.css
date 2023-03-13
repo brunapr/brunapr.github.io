@@ -95,25 +95,18 @@
 
 .passion-list {
   width: 100%;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  /* display: flex;
+  justify-content: space-between; */
+  grid-template-columns: 13% 13% 13% 13% 13% 13%;
+  grid-template-rows: 50px;
+  grid-column-gap: 4.5%;
 }
-
-.passion-first, .passion-second {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-/* .passion-first {
-  justify-content: flex-end;
-} */
 
 .passion-item {
-  width: 50px;
-  height: 50px;
+  width: 100%;
+  height: 100%;
   background-color: white;
-  /* margin: 0px 10px; */
 
   display: flex;
   flex-direction: column;
@@ -122,13 +115,10 @@
 
   transition: 0.5s;
   position: relative;
-
-  /* filter: grayscale(100%); */
 }
 
 .passion-item:hover {
   box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.2);
-  /* filter: grayscale(0%); */
 }
 
 .passion-item:hover .tooltiptext,
@@ -138,9 +128,11 @@
 
 .skillset-icons {
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  grid-template-rows: 20% 20% 20% 20%;
+  grid-column-gap: 5%;
+  grid-row-gap: 5%;
 }
 
 .skillset-icons .icons-row {
@@ -149,9 +141,9 @@
   margin-bottom: 10px;
 }
 
-.skillset-icons .icons-row .skillset-icon {
-  width: 80px;
-  height: 80px;
+.skillset-icons .skillset-icon {
+  width: 100%;
+  height: 100%;
   background-color: white;
 
   display: flex;
@@ -161,22 +153,19 @@
 
   transition: 0.5s;
   position: relative;
-
-  /* filter: grayscale(100%); */
 }
 
-.skillset-icons .icons-row .skillset-icon .tooltiptext {
+.skillset-icons .skillset-icon .tooltiptext {
   bottom: 90px;
   width: 100px;
 }
 
-.skillset-icons .icons-row .skillset-icon .tooltiptext::before {
+.skillset-icons .skillset-icon .tooltiptext::before {
   right: 45px;
 }
 
-.skillset-icons .icons-row .skillset-icon:hover {
+.skillset-icons .skillset-icon:hover {
   box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.2);
-  /* filter: grayscale(0%); */
 }
 
 .skillset-icon-wrapper {
@@ -191,12 +180,20 @@
 
 .skillset-gif-wrapper {
   width: 100%;
-  height: 150px;
-  background-image: url(../../assets/images/cube.gif);
-  background-size: cover;
-  background-position: center;
-
+  height: auto;
   transition: 0.5s;
+  display: flex;
+}
+
+.skillset-gif-wrapper img {
+  width: 50%;
+  height: auto;
+}
+
+.gif-wrapper-aux {
+  width: 25%;
+  height: 100%;
+  background-color: #C2C3C7;
 }
 
 .skillset-gif-wrapper:hover {
@@ -204,16 +201,49 @@
 }
 
 @media screen and (max-width: 1200px) {
+  .skillset {
+    margin-right: 5%;
+  }
+
+  .gif-wrapper-aux {
+    width: 15%;
+  }
+
+  .skillset-gif-wrapper img {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+
+  .about-me-wrapper > .who-i-am,
+  .about-me-wrapper .skillset .div {
+    height: 75vh;
+  }
+
+  .basic-info, .history-info {
+    margin-bottom: 30px;
+  }
+
   .about-me-wrapper {
     flex-direction: column;
     overflow-y: scroll;
   }
 
   .about-me-wrapper .who-i-am {
-    height: 100%;
+    height: auto;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 12%;
     margin-left: 0;
+  }
+
+  .who-i-am h6, .who-i-am span, .who-i-am p {
+    font-size: 2.5vmin;
+  }
+
+  .who-i-am span {
+    margin-bottom: 5px;
+    color: var(--faded-text-color);
   }
 
   .about-me-wrapper .skillset {
@@ -221,11 +251,93 @@
     height: 100%;
   }
 
-  .passion-list {
-    flex-direction: column;
+  /* .passion-item {
+    width: 100%;
+    height: 100%;
+  } */
+
+  /* .who-i-am-img-wrapper {
+    width: 30%;
+  } */
+
+  .about-me-wrapper {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
   }
 
-  .passion-first, .passion-second {
-    justify-content: center;
+  .about-me-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .skillset-icons {
+    grid-template-columns: 21.2% 21.2% 21.2% 21.2%;
+    grid-template-rows: 25% 25% 25%;
+    grid-column-gap: 5%;
+    grid-row-gap: 5%;
+  }
+
+  .passion-list {
+    grid-template-rows: 10vw;
+  }
+
+  .gif-wrapper-aux {
+    width: 40%;
+  }
+
+  .skillset-gif-wrapper img {
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .who-i-am span, .history-info p,
+  .who-i-am h6 {
+    font-size: 3vmin;
+  }
+
+  .gif-wrapper-aux {
+    width: 35%;
+  }
+
+  .skillset-gif-wrapper img {
+    width: 30%;
+  }
+
+  /* .passion-list {
+    grid-template-rows: 10vw;
+  } */
+}
+
+@media screen and (max-width: 500px) {
+  .who-i-am span, .history-info p,
+  .who-i-am h6 {
+    font-size: 3.5vmin;
+  }
+
+  .gif-wrapper-aux {
+    width: 30%;
+  }
+
+  .skillset-gif-wrapper img {
+    width: 40%;
+  }
+
+  /* .passion-item {
+    width: 6vh;
+    height: 6vh;
+  } */
+
+  .skillset-icons {
+    grid-template-columns: 26.5% 26.5% 26.5%;
+    grid-template-rows: 20% 20% 20% 20%;
+    grid-column-gap: 10%;
+    grid-row-gap: 5%;
+  }
+
+  .passion-list {
+    grid-template-columns: 28% 28% 28%;
+    grid-template-rows: 16vw 16vw;
+    grid-column-gap: 8%;
+    grid-row-gap: 20px;
   }
 }

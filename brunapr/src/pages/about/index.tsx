@@ -33,7 +33,7 @@ export default function About() {
                   Eu sou uma <b>desenvolvedora front-end</b> e <b>designer de UI/UX </b> 
                   nascida no Brasil, Rio de Janeiro - RJ.
                   <br/>
-                  Apesar de ser familiar com HTML/CSS desde adolescente, eu
+                  Apesar de já conhecer HTML/CSS desde adolescente, eu
                   apenas comecei a aprender front-end com 19 anos após entrar
                   na <b>EJCM</b>, uma Empresa Júnior da minha faculdade, <b>UFRJ</b>.
                   <br/><br/>
@@ -56,137 +56,124 @@ export default function About() {
             <div className="passion-info">
               <h6>{Translate("love")}</h6>
               <div className="passion-list">
-                <div className="passion-first">
-                  <div className="passion-item">
-                    <span>👾</span>
-                    <span className="tooltiptext">pixel art</span>
-                  </div>
-                  <div className="passion-item">
-                    <span>🎨</span>
-                    <span className="tooltiptext">design</span>
-                  </div>
-                  <div className="passion-item">
-                    <span>🦜</span>
-                    <span className="tooltiptext">{Translate("my pets")}</span>
-                  </div>
-                  <div className="passion-item">
-                    <span>🎮</span>
-                    <span className="tooltiptext">{Translate("games")}</span>
-                  </div>
-                  <div className="passion-item">
-                    <span>🔮</span>
-                    <span className="tooltiptext">tarot</span>
-                  </div>
-                  <div className="passion-item">
-                    <span>🍰</span>
-                    <span className="tooltiptext">{Translate("desserts")}</span>
-                  </div>
+                <div className="passion-item">
+                  <span>👾</span>
+                  <span className="tooltiptext">pixel art</span>
                 </div>
-                {/* <div className="passion-second">
-                  <div className="passion-item">
-                    <span>🎮</span>
-                    <span className="tooltiptext">games</span>
-                  </div>
-                  <div className="passion-item">
-                    <span>🔮</span>
-                    <span className="tooltiptext">tarot</span>
-                  </div>
-                  <div className="passion-item">
-                    <span>🍰</span>
-                    <span className="tooltiptext">desserts</span>
-                  </div>
-                </div> */}
+                <div className="passion-item">
+                  <span>🎨</span>
+                  <span className="tooltiptext">design</span>
+                </div>
+                <div className="passion-item">
+                  <span>🦜</span>
+                  <span className="tooltiptext">{Translate("my pets")}</span>
+                </div>
+                <div className="passion-item">
+                  <span>🎮</span>
+                  <span className="tooltiptext">{Translate("games")}</span>
+                </div>
+                <div className="passion-item">
+                  <span>🔮</span>
+                  <span className="tooltiptext">tarot</span>
+                </div>
+                <div className="passion-item">
+                  <span>🍰</span>
+                  <span className="tooltiptext">{Translate("desserts")}</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div className="skillset">
-          <h1>{Translate("skills")}</h1>
+          <h1>Skills</h1>
           <div>
             <div className="skillset-icons">
-              <div className="icons-row">
-                <div className="skillset-icon">
-                  <div className="skillset-icon-wrapper">
-                    <img src={require("../../assets/skills/html.png")}/>
-                  </div>
-                  <span className="tooltiptext">html</span>
+              <div className="skillset-icon">
+                <div className="skillset-icon-wrapper">
+                  <img src={require("../../assets/skills/html.png")}/>
                 </div>
-                <div className="skillset-icon">
-                  <div className="skillset-icon-wrapper">
-                    <img src={require("../../assets/skills/css.png")}/>
-                  </div>
-                  <span className="tooltiptext">css</span>
-                </div>
-                <div className="skillset-icon">
-                  <div className="skillset-icon-wrapper">
-                    <img src={require("../../assets/skills/figma.png")}/>
-                  </div>
-                  <span className="tooltiptext">figma</span>
-                </div>
+                <span className="tooltiptext">html</span>
               </div>
-              <div className="icons-row">
-                <div className="skillset-icon">
-                 <div className="skillset-icon-wrapper">
-                    <img src={require("../../assets/skills/react.png")}/>
-                  </div>
-                  <span className="tooltiptext">react native</span>
+              <div className="skillset-icon">
+                <div className="skillset-icon-wrapper">
+                  <img src={require("../../assets/skills/css.png")}/>
                 </div>
-                <div className="skillset-icon">
-                 <div className="skillset-icon-wrapper">
-                    <img src={require("../../assets/skills/react.png")}/>
-                  </div>
-                  <span className="tooltiptext">react js</span>
-                </div>
-                <div className="skillset-icon">
-                  <div className="skillset-icon-wrapper">
-                    <img src={require("../../assets/skills/vue.png")}/>
-                  </div>
-                  <span className="tooltiptext">vue</span>
-                </div>
+                <span className="tooltiptext">css</span>
               </div>
-              <div className="icons-row">
-                <div className="skillset-icon">
-                  <div className="skillset-icon-wrapper">
-                    <img src={require("../../assets/skills/ionic.png")}/>
-                  </div>
-                  <span className="tooltiptext">ionic</span>
+              <div className="skillset-icon">
+                <div className="skillset-icon-wrapper">
+                  <img src={require("../../assets/skills/figma.png")}/>
                 </div>
-                <div className="skillset-icon">
-                  <div className="skillset-icon-wrapper">
-                    <img src={require("../../assets/skills/angular.png")}/>
-                  </div>
-                  <span className="tooltiptext">angular</span>
-                </div>
-                <div className="skillset-icon">
-                  <div className="skillset-icon-wrapper">
-                    <img src={require("../../assets/skills/flutter.png")}/>
-                  </div>
-                  <span className="tooltiptext">flutter</span>
-                </div>
+                <span className="tooltiptext">figma</span>
               </div>
-              <div className="icons-row">
-                <div className="skillset-icon">
-                  <div className="skillset-icon-wrapper">
-                    <img src={require("../../assets/skills/js.png")}/>
-                  </div>
-                  <span className="tooltiptext">javascript</span>
+              {/* <div className="icons-row">
+              </div> */}
+              <div className="skillset-icon">
+                <div className="skillset-icon-wrapper">
+                  <img src={require("../../assets/skills/react.png")}/>
                 </div>
-                <div className="skillset-icon">
-                  <div className="skillset-icon-wrapper">
-                    <img src={require("../../assets/skills/laravel.png")}/>
-                  </div>
-                  <span className="tooltiptext">laravel</span>
-                </div>
-                <div className="skillset-icon">
-                  <div className="skillset-icon-wrapper">
-                    <img src={require("../../assets/skills/node.png")}/>
-                  </div>
-                  <span className="tooltiptext">node js</span>
-                </div>
+                <span className="tooltiptext">react native</span>
               </div>
-              <div className="skillset-gif-wrapper"/>
+              <div className="skillset-icon">
+                <div className="skillset-icon-wrapper">
+                  <img src={require("../../assets/skills/react.png")}/>
+                </div>
+                <span className="tooltiptext">react js</span>
+              </div>
+              <div className="skillset-icon">
+                <div className="skillset-icon-wrapper">
+                  <img src={require("../../assets/skills/vue.png")}/>
+                </div>
+                <span className="tooltiptext">vue</span>
+              </div>
+              {/* <div className="icons-row">
+              </div> */}
+              <div className="skillset-icon">
+                <div className="skillset-icon-wrapper">
+                  <img src={require("../../assets/skills/ionic.png")}/>
+                </div>
+                <span className="tooltiptext">ionic</span>
+              </div>
+              <div className="skillset-icon">
+                <div className="skillset-icon-wrapper">
+                  <img src={require("../../assets/skills/angular.png")}/>
+                </div>
+                <span className="tooltiptext">angular</span>
+              </div>
+              <div className="skillset-icon">
+                <div className="skillset-icon-wrapper">
+                  <img src={require("../../assets/skills/flutter.png")}/>
+                </div>
+                <span className="tooltiptext">flutter</span>
+              </div>
+              {/* <div className="icons-row">
+              </div> */}
+              <div className="skillset-icon">
+                <div className="skillset-icon-wrapper">
+                  <img src={require("../../assets/skills/js.png")}/>
+                </div>
+                <span className="tooltiptext">javascript</span>
+              </div>
+              <div className="skillset-icon">
+                <div className="skillset-icon-wrapper">
+                  <img src={require("../../assets/skills/laravel.png")}/>
+                </div>
+                <span className="tooltiptext">laravel</span>
+              </div>
+              <div className="skillset-icon">
+                <div className="skillset-icon-wrapper">
+                  <img src={require("../../assets/skills/node.png")}/>
+                </div>
+                <span className="tooltiptext">node js</span>
+              </div>
+              {/* <div className="icons-row">
+              </div> */}
             </div>
-            <div className="skillset-img-wrapper"></div>
+            <div className="skillset-gif-wrapper">
+              <div className="gif-wrapper-aux"></div>
+              <img src={require("../../assets/images/cube.gif")}/>
+              <div className="gif-wrapper-aux"></div>
+            </div>
           </div>
         </div>
       </div>
