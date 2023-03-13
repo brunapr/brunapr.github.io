@@ -1,0 +1,224 @@
+.about-me-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.about-me-wrapper .who-i-am {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-left: 5%;
+}
+
+.about-me-wrapper .skillset {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+}
+
+.about-me-wrapper > * > div {
+  width: 100%;
+  height: 100%;
+  background-color: var(--box-color);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.basic-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.basic-info-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.who-i-am h6 {
+  margin: 0 0 18px 0;
+  text-transform: uppercase;
+  font-family: "Montserrat-Bold";
+}
+
+.who-i-am span {
+  font-size: 1.8vmin;
+  margin-bottom: 5px;
+  color: var(--faded-text-color);
+}
+
+.who-i-am span:last-child {
+  margin-bottom: 0;
+}
+
+.who-i-am p {
+  margin: 0;
+  font-size: 1.8vmin;
+  line-height: 1.5;
+  color: var(--faded-text-color);
+  text-align: justify;
+}
+
+.who-i-am b {
+  color: var(--highlight);
+}
+
+.who-i-am-img-wrapper {
+  width: 40%;
+  height: auto;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  transition: 0.5s;
+
+  background-image: url(../../assets/images/pfp.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.who-i-am-img-wrapper img {
+  width: 100%;
+  height: inherit;
+}
+
+.who-i-am-img-wrapper:hover {
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.2);
+}
+
+.passion-list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.passion-first, .passion-second {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* .passion-first {
+  justify-content: flex-end;
+} */
+
+.passion-item {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  /* margin: 0px 10px; */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  transition: 0.5s;
+  position: relative;
+}
+
+.passion-item:hover {
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.2);
+}
+
+.passion-item:hover .tooltiptext,
+.skillset-icon:hover .tooltiptext {
+  visibility: visible;
+}
+
+.skillset-icons {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.skillset-icons .icons-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.skillset-icons .icons-row .skillset-icon {
+  width: 80px;
+  height: 80px;
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  transition: 0.5s;
+  position: relative;
+}
+
+.skillset-icons .icons-row .skillset-icon .tooltiptext {
+  bottom: 90px;
+  width: 100px;
+}
+
+.skillset-icons .icons-row .skillset-icon .tooltiptext::before {
+  right: 45px;
+}
+
+.skillset-icons .icons-row .skillset-icon:hover {
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.2);
+}
+
+.skillset-icon-wrapper {
+  width: 40px;
+  height: 40px;
+}
+
+.skillset-icon-wrapper img {
+  width: 100%;
+  height: auto;
+}
+
+.skillset-gif-wrapper {
+  width: 100%;
+  height: 150px;
+  background-image: url(../../assets/images/cube.gif);
+  background-size: cover;
+  background-position: center;
+
+  transition: 0.5s;
+}
+
+.skillset-gif-wrapper:hover {
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 1200px) {
+  .about-me-wrapper {
+    flex-direction: column;
+    overflow-y: scroll;
+  }
+
+  .about-me-wrapper .who-i-am {
+    height: 100%;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-left: 0;
+  }
+
+  .about-me-wrapper .skillset {
+    width: 100%;
+    height: 100%;
+  }
+
+  .passion-list {
+    flex-direction: column;
+  }
+
+  .passion-first, .passion-second {
+    justify-content: center;
+  }
+}

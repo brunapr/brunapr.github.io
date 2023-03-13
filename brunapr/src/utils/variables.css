@@ -1,5 +1,7 @@
 :root {
   --bg-color: #DAD4FF;
   --text-color: #232323;
+  --faded-text-color: #adadad;
   --box-color: #F2F2F2;
+  --highlight: #83769C;
 }
