@@ -6,6 +6,7 @@ export default function Hover(props:any) {
   
   return(
     <div
+      style={props.style}
       onMouseEnter={() => cursorChangeHandler("hovered")}
       onMouseLeave={() => cursorChangeHandler("")}
     >

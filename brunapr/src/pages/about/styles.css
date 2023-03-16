@@ -99,7 +99,7 @@
   /* display: flex;
   justify-content: space-between; */
   grid-template-columns: 13% 13% 13% 13% 13% 13%;
-  grid-template-rows: 50px;
+  grid-template-rows: 55px;
   grid-column-gap: 4.5%;
 }
 

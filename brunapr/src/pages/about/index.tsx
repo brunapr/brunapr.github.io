@@ -124,7 +124,7 @@ export default function About() {
                 <div className="skillset-icon-wrapper">
                   <img src={require("../../assets/skills/vue.png")}/>
                 </div>
-                <span className="tooltiptext">vue</span>
+                <span className="tooltiptext">vue js</span>
               </div>
               {/* <div className="icons-row">
               </div> */}
