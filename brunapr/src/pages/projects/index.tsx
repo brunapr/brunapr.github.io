@@ -4,9 +4,13 @@ import Hover from '../../components/cursor';
 import Translate from '../../utils/translate';
 import projects, { IProjectData } from '../../utils/projects';
 import './styles.css';
+import useWindowDimensions from '../../hooks/useWindowDimensions';
 
 export default function Projects() {
   const [ tab, setTab ] = useState(1);
+  const [ cols, setCols ] = useState(3);
+  const [ clicked, setClicked ] = useState(0);
+  const { width } = useWindowDimensions();
 
   function shuffleProjects() {
     for (var i = projects.length - 1; i > 0; i--) {
@@ -21,19 +25,45 @@ export default function Projects() {
     shuffleProjects();
   }, [])
 
+  useEffect(() => {
+    if(width <= 700) {
+      setCols(1);
+    } else if(width <= 900 && width > 700) {
+      setCols(2);
+    } else if(width > 900) {
+      setCols(3);
+    }
+  }, [width])
+
+  useEffect(()=>{
+    const element = document.getElementById(`project${clicked}`);
+
+    setTimeout(() => {
+      if(element) {
+        if(element.classList.length > 1) {
+          element.classList.remove("project-expand");
+        } else {
+          element.classList.add("project-expand");
+        }
+      }
+    }, 100)
+  }, [clicked]);
+
   const ProjectsList = (props: {item: IProjectData}) => {
     return(
       <ImageListItem key={props.item.name}>
-        <div className="list-item-wrapper">
+        <div
+          className="list-item-wrapper" 
+          onClick={() => { clicked == props.item.id ? setClicked(0) : setClicked(props.item.id) }}>
           <Hover>
             <img
               src={require(`../../assets/projects/${props.item.src}.png`)}
               loading="lazy"
             />
-            <div className="list-item-bottom-placeholder">
+            {/* <div className="list-item-bottom-placeholder">
               <span>{props.item.name}</span>
-            </div>
-            <div className="list-item-bottom">
+            </div> */}
+            <div id={`project${props.item.id}`} className="list-item-bottom">
               <span>{props.item.name}</span>
               <span className="item-tag">[{props.item.tag}]</span>
               <span className="item-description">{Translate(props.item.src)}</span>
@@ -84,7 +114,7 @@ export default function Projects() {
             </Hover>
           </div>
           <div className="projects-list">
-            <ImageList variant="masonry" cols={3} gap={40}>
+            <ImageList variant="masonry" cols={cols} gap={40}>
             {
               tab == 1 &&
               projects.map((index: IProjectData) => (

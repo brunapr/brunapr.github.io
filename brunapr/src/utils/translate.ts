@@ -48,6 +48,8 @@ export default function Translate(text: string) {
         return "abrir";
       case "all":
         return "todos";
+      case "learn more":
+        return "Saiba Mais";
       case "cara":
         return "Cara! nasceu da minha vontade de desenhar e não saber o quê. O programa te dá várias opções para aleatorizar um personagem - desde a cor do cabelo até seu signo. Dessa forma, fica bem mais divertido se desafiar criando coisas novas. Já tinha visto alguns programas parecidos pela internet que te dão ações, expressões ou fundos para desenhar, mas nunca encontrei um que tivesse opcões mais específicas, como cor dos olhos, cicatrizes e outros detalhes. Com isso, resolvi criar meu próprio projeto que faz isso por mim.";
       case "caronae":
@@ -115,10 +117,12 @@ export default function Translate(text: string) {
         return "open";
       case "all":
         return "All";
+      case "learn more":
+        return "Learn More";
       case "cara":
         return "Cara! born from my feeling of wishing to draw but couldn't know what. The program gives you a variety of options to randomize a character - from haircolor to zodiac signs. It gets funnier to challenge yourself to create new things this way. I've had already seem similar programs around the internet that would give me actions, background or expressions to draw, but never one that had that many diverse options, like eye color, scars and other details. With that in mind, I decided to create my own project that would do that for me!";
       case "caronae":
-        return "Caronaê is an University Extension Program from UFRJ which I'm a part of. Made from an entire team of students and a teacher as a coordinator, he wants to make the life of people that wants to ask for rides in UFRJ's campi easier. It's not only possible to register as a driver and offer rides, but you can register as a passenger and search for them too. It's only possible to register if you have an active enrollment at UFRJ. After filling your car data, the driver can create a ride containing date, time and route. The passenger can use the search page to input exactly where and when he needs a ride. If he finds one that he likes, he can ask the driver to join by clicking a button.";
+        return "Caronaê is an University Extension Program from UFRJ which I'm a part of. Made from an entire team of students and a teacher as a coordinator, Caronaê wants to make the life of people that wants to ask for rides in UFRJ's campi easier. It's not only possible to register as a driver and offer rides, but you can register as a passenger and search for them too. It's only possible to register if you have an active enrollment at UFRJ. After filling your car data, the driver can create a ride containing date, time and route. The passenger can use the search page to input exactly where and when he needs a ride. If he finds one that he likes, he can ask the driver to join by clicking a button.";
       case "cleanmarine":
         return "Clean Marine was a group project made for Computers and Society class from Computer Science at UFRJ, in March 2022. The project has the Sustainable Development Goals (SDG) 14 - Life Below Water from the UN as an inspiration. The goal was to create a product that would help getting closer to SDG 14 in some way. For this to happen, we thought about creating a garbage collecting event at the beach in a gamified way, with rankings, collectible rewards, sponsors and the direct option to donate for one of the NGO that are related with our SDG. The main idea is to maintain a healthy user competition and at the same time help the environment.";
       case "coliseum":

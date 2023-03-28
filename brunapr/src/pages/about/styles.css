@@ -130,9 +130,10 @@
   height: 100%;
   display: grid;
   grid-template-columns: 30% 30% 30%;
-  grid-template-rows: 20% 20% 20% 20%;
+  grid-template-rows: 10vh 10vh 10vh 10vh;
   grid-column-gap: 5%;
   grid-row-gap: 5%;
+  transition: 0.5s;
 }
 
 .skillset-icons .icons-row {
@@ -186,12 +187,12 @@
 }
 
 .skillset-gif-wrapper img {
-  width: 50%;
+  width: 10vh;
   height: auto;
 }
 
 .gif-wrapper-aux {
-  width: 25%;
+  width: 100%;
   height: 100%;
   background-color: #C2C3C7;
 }
@@ -205,19 +206,20 @@
     margin-right: 5%;
   }
 
-  .gif-wrapper-aux {
-    width: 15%;
-  }
 
   .skillset-gif-wrapper img {
-    width: 70%;
+    width: 8vw;
+  }
+
+  .skillset-icons {
+    grid-template-rows: 8vw 8vw 8vw 8vw;
   }
 }
 
 @media screen and (max-width: 900px) {
 
   .about-me-wrapper > .who-i-am,
-  .about-me-wrapper .skillset .div {
+  .about-me-wrapper .skillset > div {
     height: 75vh;
   }
 
@@ -251,15 +253,6 @@
     height: 100%;
   }
 
-  /* .passion-item {
-    width: 100%;
-    height: 100%;
-  } */
-
-  /* .who-i-am-img-wrapper {
-    width: 30%;
-  } */
-
   .about-me-wrapper {
     -ms-overflow-style: none; 
     scrollbar-width: none; 
@@ -271,7 +264,7 @@
 
   .skillset-icons {
     grid-template-columns: 21.2% 21.2% 21.2% 21.2%;
-    grid-template-rows: 25% 25% 25%;
+    grid-template-rows: 13vw 13vw 13vw;
     grid-column-gap: 5%;
     grid-row-gap: 5%;
   }
@@ -280,12 +273,8 @@
     grid-template-rows: 10vw;
   }
 
-  .gif-wrapper-aux {
-    width: 40%;
-  }
-
   .skillset-gif-wrapper img {
-    width: 20%;
+    width: 15vw;
   }
 }
 
@@ -294,42 +283,21 @@
   .who-i-am h6 {
     font-size: 3vmin;
   }
-
-  .gif-wrapper-aux {
-    width: 35%;
-  }
-
-  .skillset-gif-wrapper img {
-    width: 30%;
-  }
-
-  /* .passion-list {
-    grid-template-rows: 10vw;
-  } */
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .who-i-am span, .history-info p,
   .who-i-am h6 {
     font-size: 3.5vmin;
   }
 
-  .gif-wrapper-aux {
-    width: 30%;
-  }
-
   .skillset-gif-wrapper img {
-    width: 40%;
+    width: 16vw;
   }
-
-  /* .passion-item {
-    width: 6vh;
-    height: 6vh;
-  } */
 
   .skillset-icons {
     grid-template-columns: 26.5% 26.5% 26.5%;
-    grid-template-rows: 20% 20% 20% 20%;
+    grid-template-rows: 16vw 16vw 16vw 16vw;
     grid-column-gap: 10%;
     grid-row-gap: 5%;
   }
@@ -339,5 +307,10 @@
     grid-template-rows: 16vw 16vw;
     grid-column-gap: 8%;
     grid-row-gap: 20px;
+  }
+
+  .skillset-icon-wrapper {
+    width: 30px;
+    height: 30px;
   }
 }

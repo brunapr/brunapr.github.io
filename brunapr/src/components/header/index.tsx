@@ -18,15 +18,17 @@ export default function Header(
     const left = document.getElementById("left-line");
     const right = document.getElementById("right-line");
     const dropdown = document.getElementById("dropdown");
-    
-    if(left!.classList.length > 1) {
-      dropdown?.classList.remove("expand");
-      left?.classList.remove("left-line");
-      right?.classList.remove("right-line");
-    } else {
-      left?.classList.add("left-line");
-      right?.classList.add("right-line");
-      dropdown?.classList.add("expand");
+
+    if(left && right && dropdown) {
+      if(dropdown.classList.length > 1) {
+        dropdown.classList.remove("expand");
+        left.classList.remove("left-line");
+        right.classList.remove("right-line");
+      } else {
+        left.classList.add("left-line");
+        right.classList.add("right-line");
+        dropdown.classList.add("expand");
+      }
     }
   }, [click]);
 
