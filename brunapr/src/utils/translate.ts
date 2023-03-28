@@ -44,6 +44,8 @@ export default function Translate(text: string) {
         return "curriculo";
       case "copy":
         return "copiar";
+      case "copied!":
+        return "copiado!";
       case "open":
         return "abrir";
       case "all":
@@ -113,6 +115,8 @@ export default function Translate(text: string) {
         return "curriculum";
       case "copy":
         return "copy";
+      case "copied!":
+        return "copied!";
       case "open":
         return "open";
       case "all":

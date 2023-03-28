@@ -19,7 +19,7 @@ const projects = [
     name: "Caronaê",
     tag: "app",
     src: "caronae",
-    url: "",
+    url: "https://github.com/caronae",
   },
   {
     id: 3,
@@ -40,21 +40,21 @@ const projects = [
     name: "Happy",
     tag: "web",
     src: "happy",
-    url: "",
+    url: "https://github.com/brunapr/Happy",
   },
   {
     id: 6,
     name: "Hommy",
     tag: "app",
     src: "hommyapp",
-    url: "",
+    url: "https://github.com/brunapr/hommy-app",
   },
   {
     id: 7,
     name: "Hommy",
     tag: "web",
     src: "hommy",
-    url: "",
+    url: "https://github.com/brunapr/hommy-landing",
   },
   {
     id: 8,
@@ -68,21 +68,21 @@ const projects = [
     name: "Notice.me",
     tag: "app",
     src: "noticeme",
-    url: "",
+    url: "https://github.com/brunapr/hommy-landing",
   },
   {
     id: 10,
     name: "Nutri.me",
     tag: "ui/ux",
     src: "nutrime",
-    url: "",
+    url: "https://www.behance.net/gallery/140113727/nutrime",
   },
   {
     id: 11,
     name: "Pokefile",
     tag: "web",
     src: "pokefile",
-    url: "",
+    url: "https://github.com/andradenathan/pokefile",
   },
 ];
 

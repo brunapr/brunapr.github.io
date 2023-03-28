@@ -60,13 +60,22 @@ export default function Projects() {
               src={require(`../../assets/projects/${props.item.src}.png`)}
               loading="lazy"
             />
-            {/* <div className="list-item-bottom-placeholder">
-              <span>{props.item.name}</span>
-            </div> */}
             <div id={`project${props.item.id}`} className="list-item-bottom">
-              <span>{props.item.name}</span>
-              <span className="item-tag">[{props.item.tag}]</span>
-              <span className="item-description">{Translate(props.item.src)}</span>
+              <div>
+                <span>{props.item.name}</span>
+                <span className="item-tag">[{props.item.tag}]</span>
+                <span className="item-description">{Translate(props.item.src)}</span>
+              </div>
+              {
+                props.item.url != "" &&
+                <a 
+                  href={props.item.url}
+                  target="_blank"
+                  className="item-url"
+                >
+                  {Translate("learn more")}
+                </a>
+              }
             </div>
           </Hover>
         </div>
