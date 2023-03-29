@@ -133,6 +133,8 @@
   grid-template-rows: 9vh 9vh 9vh 9vh;
   grid-column-gap: 5%;
   grid-row-gap: 5%;
+
+  margin-bottom: 16%;
   transition: 0.5s;
 }
 
@@ -184,6 +186,7 @@
   height: auto;
   transition: 0.5s;
   display: flex;
+  margin-top: 10%;
 }
 
 .skillset-gif-wrapper img {
@@ -220,7 +223,7 @@
 
   .about-me-wrapper > .who-i-am,
   .about-me-wrapper .skillset > div {
-    height: 75vh;
+    height: fit-content;
   }
 
   .basic-info, .history-info {
@@ -230,6 +233,7 @@
   .about-me-wrapper {
     flex-direction: column;
     overflow-y: scroll;
+    max-width: 600px;
   }
 
   .about-me-wrapper .who-i-am {
@@ -266,15 +270,19 @@
     grid-template-columns: 21.2% 21.2% 21.2% 21.2%;
     grid-template-rows: 13vw 13vw 13vw;
     grid-column-gap: 5%;
-    grid-row-gap: 5%;
+    grid-row-gap: 9%;
   }
 
   .passion-list {
-    grid-template-rows: 10vw;
+    grid-template-rows: 8vw;
   }
 
   .skillset-gif-wrapper img {
     width: 15vw;
+  }
+
+  .skillset-icons .skillset-icon .tooltiptext {
+    bottom: 80px;
   }
 }
 

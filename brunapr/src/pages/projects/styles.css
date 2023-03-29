@@ -94,7 +94,7 @@
   transition: 0.5s;
 
   z-index: 3;
-  overflow-y: auto;
+  overflow-y: hidden;
   -ms-overflow-style: none;  
   scrollbar-width: none;  
 }
@@ -120,6 +120,7 @@
 
 .project-expand {
   height: calc(100% - 6px);
+  overflow-y: auto;
   transition: 0.5s;
 }
 
@@ -162,6 +163,7 @@
 @media screen and (max-width: 1200px) {
   .projects-wrapper > div {
     margin-left: 0;
+    width: 91%;
   }
 
   .projects-wrapper h1 {
@@ -170,6 +172,12 @@
 
   .projects-list {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .projects-wrapper {
+    max-width: 600px;
   }
 }
 
