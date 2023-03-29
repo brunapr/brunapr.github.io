@@ -56,6 +56,16 @@ h1 {
   }
 
   .main-slide > * {
-    width: calc(100vw - 65px);
+    width: 100vw;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .main-slide {
+    width: calc(84vw*4);
+  }
+
+  .main-slide > * {
+    width: 84vw;
   }
 }

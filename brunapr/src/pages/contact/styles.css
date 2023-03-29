@@ -9,6 +9,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: 0.5s;
 }
 
 .contact-title {
@@ -35,6 +36,7 @@
 
 .contact-texts > div > span {
   font-size: 16px;
+  transition: 0.5s;
 }
 
 .contact-texts > div > div > svg {
@@ -101,7 +103,7 @@
 .contact-text-link .tooltiptext {
   left: 80px;
   margin-left: -40px;
-  bottom: 5px;
+  bottom: 0px;
 }
 
 .contact-text-link:visited {
@@ -112,6 +114,7 @@
 
 .contact-text-link {
   position: relative;
+  display: flex;
   text-decoration: none;
   color: var(--text-color);
 }
@@ -125,4 +128,33 @@
 .round-link:hover .tooltiptext,
 .contact-text-link:hover .tooltiptext {
   visibility: visible;
+}
+
+@media screen and (max-width: 500px) {
+  .contact-text-link .tooltiptext::before {
+    left: 35px;
+    bottom: -4px;
+  }
+
+  .contact-text-link .tooltiptext {
+    left: 9px;
+    margin-left: -40px;
+    bottom: 30px;
+  } 
+}
+
+@media screen and (max-width: 400px) {
+  .contact-wrapper {
+    padding: 20px;
+    min-width: 200px;
+  }
+
+  .contact-title {
+    margin: -60px 0 0 0;
+    min-width: 200px;
+  }
+
+  .contact-texts > div > span {
+    font-size: 12px;
+  }
 }

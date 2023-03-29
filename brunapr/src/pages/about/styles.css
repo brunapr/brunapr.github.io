@@ -244,7 +244,7 @@
   }
 
   .who-i-am h6, .who-i-am span, .who-i-am p {
-    font-size: 2.5vmin;
+    font-size: 16px; 
   }
 
   .who-i-am span {
@@ -286,19 +286,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
-  .who-i-am span, .history-info p,
-  .who-i-am h6 {
-    font-size: 3vmin;
-  }
-}
-
 @media screen and (max-width: 600px) {
-  .who-i-am span, .history-info p,
-  .who-i-am h6 {
-    font-size: 3.5vmin;
-  }
-
   .skillset-gif-wrapper img {
     width: 16vw;
   }
@@ -318,7 +306,30 @@
   }
 
   .skillset-icon-wrapper {
-    width: 30px;
-    height: 30px;
+    width: 40%;
+    height: 40%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .about-me-wrapper > * > div {
+    padding: 10%;
+  }
+
+  .basic-info {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+
+  .who-i-am-img-wrapper {
+    width: 100%;
+    margin-bottom: 40px;
+    height: 70vw;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .who-i-am h6, .who-i-am span, .who-i-am p {
+    font-size: 12px; 
   }
 }

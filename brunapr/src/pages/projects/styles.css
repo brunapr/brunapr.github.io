@@ -179,21 +179,60 @@
   .projects-wrapper {
     max-width: 600px;
   }
+
+  .list-item-bottom {
+    font-size: 16px;
+  }
+
+  .list-item-bottom .item-tag,
+  .list-item-bottom .item-description {
+    font-size: 14px !important;
+  }
 }
 
 @media screen and (max-width: 700px) {
   .projects-wrapper > div {
-    padding: 5%;
+    padding: 10%;
   }
-  
+
+  .projects-wrapper > div {
+    width: 80%;
+  }
+
+  .projects-list {
+    margin-top: 5%;
+  }
+
   .list-item-wrapper .list-item-bottom .item-tag {
     margin-top: 15px;
-    font-size: 2.8vmin;
+    /* font-size: 2.8vmin; */
   }
   
   .list-item-bottom .item-description {
     margin: 20px;
-    font-size: 2.8vmin;
+    /* font-size: 2.8vmin; */
     line-height: 1.5;
+  }
+
+  .projects-tab span {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .projects-list {
+    margin-top: 10%;
+  }
+
+  .projects-list > ul > li {
+    margin-bottom: 20px !important;
+  }
+
+  .projects-tab {
+    justify-content: space-between;
+  }
+
+  .projects-tab > div {
+    padding: 0 !important;
   }
 }

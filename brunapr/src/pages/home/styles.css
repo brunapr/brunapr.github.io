@@ -3,6 +3,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0px 10px;
+}
+
+.slide-child-wrapper > div {
+  overflow-x: hidden;
 }
 
 .home-paper {
@@ -50,4 +55,11 @@
   margin-top: 40px;
   font-size: 16px;
   text-align: center;
+}
+
+@media screen and (max-width: 400px) {
+  .home-paper span {
+    width: 14vw;
+    font-size: 18px;
+  }
 }
