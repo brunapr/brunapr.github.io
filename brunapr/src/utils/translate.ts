@@ -4,7 +4,7 @@ import { LanguageContext } from "../contexts/languageContext";
 export default function Translate(text: string) {
   const { language } = useContext(LanguageContext);
 
-  if(language == "pt") {
+  if(language == "pt-BR") {
     switch (text) {
       case "front-end developer and ui/ux designer":
         return "desenvolvedora front-end e designer de ui/ux";

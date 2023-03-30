@@ -11,15 +11,9 @@ const LanguageProvider = ({ children }: any) => {
   const [ language, setLanguage ] = useState<String | null>(null);
 
   useEffect(() => {
-    getLanguage();
+    var lng = navigator.language || window.navigator.language;
+    setLanguage(lng);
   }, []);
-
-  const getLanguage = async () => {
-    const token = await localStorage.getItem('language');
-    if (token) {
-      setLanguage(token);
-    }
-  };
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>
