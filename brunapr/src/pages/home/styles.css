@@ -66,6 +66,12 @@
   }
 }
 
+@media screen and (max-width: 700px) {
+  .home-paper {
+    margin-top: -40px;
+  }
+}
+
 @media screen and (max-width: 400px) {
   .home-paper span {
     width: 14vw;
