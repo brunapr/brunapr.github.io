@@ -28,7 +28,7 @@ export default function About() {
             <div className="history-info">
               <h6>{Translate("how it started")}</h6>
               {
-                language == "pt" ?
+                language == "pt-BR" ?
                 <p className="history-text">
                   Eu sou uma <b>desenvolvedora front-end</b> e <b>designer de UI/UX </b> 
                   nascida no Brasil, Rio de Janeiro - RJ.
