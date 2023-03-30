@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6e74f388.css",
+    "main.js": "/static/js/main.a90ebf1d.js",
+    "static/media/hommy.png": "/static/media/hommy.fa502c3522bafab20b8c.png",
+    "static/media/cleanmarine.png": "/static/media/cleanmarine.fba0552c87f7b7eb7e34.png",
+    "static/media/hommyapp.png": "/static/media/hommyapp.ed68f65be36938eed889.png",
+    "static/media/happy.png": "/static/media/happy.0d0bb891f45c790bcf60.png",
+    "static/media/caronae.png": "/static/media/caronae.d01003674bba91cefc7f.png",
+    "static/media/cube.gif": "/static/media/cube.376fa6164239dba2f8dc.gif",
+    "static/media/coliseum.png": "/static/media/coliseum.f1f8af79ea3ed3490acd.png",
+    "static/media/nutrime.png": "/static/media/nutrime.82b369d8600fd6f79980.png",
+    "static/media/noticeme.png": "/static/media/noticeme.034c1b3d8e4ab6b6e41f.png",
+    "static/media/lavanda.png": "/static/media/lavanda.7c52cb038acc4725d485.png",
+    "static/media/cara.png": "/static/media/cara.6bc6c669e380bdf919cf.png",
+    "static/media/Montserrat-Italic.ttf": "/static/media/Montserrat-Italic.58b98b5c47cf787cd97a.ttf",
+    "static/media/Montserrat-Bold.ttf": "/static/media/Montserrat-Bold.2c155811b35513d5beaa.ttf",
+    "static/media/Montserrat-Regular.ttf": "/static/media/Montserrat-Regular.ceb11275ab638627a643.ttf",
+    "static/media/pokefile.png": "/static/media/pokefile.849bde0e729f8a7135f9.png",
+    "static/media/loading.gif": "/static/media/loading.1c6a33918157dc13560a.gif",
+    "static/media/curriculo.pdf": "/static/media/curriculo.51ae71035db95aacae4d.pdf",
+    "static/media/curriculum.pdf": "/static/media/curriculum.0192d00108cd0e61d0f3.pdf",
+    "static/media/ABeeZee-Italic.ttf": "/static/media/ABeeZee-Italic.abec9dae76eed00f35a6.ttf",
+    "static/media/react.png": "/static/media/react.428839d4924b447d4d50.png",
+    "static/media/laravel.png": "/static/media/laravel.f3ad6dc33fb0206ee8c2.png",
+    "static/media/node.png": "/static/media/node.9fea1c7da2bd42ab93bf.png",
+    "static/media/vue.png": "/static/media/vue.24279ca2a3d25bca25eb.png",
+    "static/media/figma.png": "/static/media/figma.72fbc535ebe253a5dbc4.png",
+    "static/media/html.png": "/static/media/html.94972f53c025a8fb7e2b.png",
+    "static/media/css.png": "/static/media/css.463e319bad8e0edf1ef7.png",
+    "index.html": "/index.html",
+    "main.6e74f388.css.map": "/static/css/main.6e74f388.css.map",
+    "main.a90ebf1d.js.map": "/static/js/main.a90ebf1d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6e74f388.css",
+    "static/js/main.a90ebf1d.js"
+  ]
+}
