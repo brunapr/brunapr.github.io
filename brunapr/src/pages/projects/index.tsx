@@ -86,75 +86,77 @@ export default function Projects() {
   return(
     <div id="projects" className="slide-child-wrapper">
       <div className="projects-wrapper">
-        <h1>{Translate("projects")}</h1>
-        <div>
-          <div className="projects-tab">
-            <Hover style={{padding: 10, paddingTop: 0, paddingLeft: 0}}>
-              <div 
-                className="tab-button"
-                onClick={() => {setTab(1)}}
-              >
-                <span className={`${tab == 1 && "active-tab"}`}>{Translate("all")}</span>
-              </div>
-            </Hover>
-            <Hover style={{padding: 10, paddingTop: 0}}>
-              <div
-                className="tab-button"
-                onClick={() => {setTab(2)}}
-              >
-                <span className={`${tab == 2 && "active-tab"}`}>App</span>
-              </div>
-            </Hover>
-            <Hover style={{padding: 10, paddingTop: 0}}>
-              <div               
-                className="tab-button"
-                onClick={() => {setTab(3)}}
-              >
-                <span className={`${tab == 3 && "active-tab"}`}>Web</span>
-              </div>
-            </Hover>
-            <Hover style={{padding: 10, paddingTop: 0}}>
-              <div               
-                className="tab-button"
-                onClick={() => {setTab(4)}}
-              >
-                <span className={`${tab == 4 && "active-tab"}`}>Ui/Ux</span>
-              </div>
-            </Hover>
-          </div>
-          <div className="projects-list">
-            <ImageList variant="masonry" cols={cols} gap={40}>
-            {
-              tab == 1 &&
-              projects.map((index: IProjectData) => (
-                <ProjectsList item={index}/>
-              ))
-            }
-            {
-              tab == 2 &&
-              projects.filter((item) => {
-                  return item.tag == "app";
-              }).map((index) => (
-                <ProjectsList item={index}/>
-              ))
-            }
-            {
-              tab == 3 &&
-              projects.filter((item) => {
-                  return item.tag == "web";
-              }).map((index) => (
-                <ProjectsList item={index as IProjectData}/>
-              ))
-            }
-            {
-              tab == 4 &&
-              projects.filter((item) => {
-                  return item.tag == "ui/ux";
-              }).map((index) => (
-                <ProjectsList item={index as IProjectData}/>
-              ))
-            }
-            </ImageList>
+        <div className="projects">
+          <h1>{Translate("projects")}</h1>
+          <div>
+            <div className="projects-tab">
+              <Hover style={{padding: 10, paddingTop: 0, paddingLeft: 0}}>
+                <div 
+                  className="tab-button"
+                  onClick={() => {setTab(1)}}
+                >
+                  <span className={`${tab == 1 && "active-tab"}`}>{Translate("all")}</span>
+                </div>
+              </Hover>
+              <Hover style={{padding: 10, paddingTop: 0}}>
+                <div
+                  className="tab-button"
+                  onClick={() => {setTab(2)}}
+                >
+                  <span className={`${tab == 2 && "active-tab"}`}>App</span>
+                </div>
+              </Hover>
+              <Hover style={{padding: 10, paddingTop: 0}}>
+                <div               
+                  className="tab-button"
+                  onClick={() => {setTab(3)}}
+                >
+                  <span className={`${tab == 3 && "active-tab"}`}>Web</span>
+                </div>
+              </Hover>
+              <Hover style={{padding: 10, paddingTop: 0}}>
+                <div               
+                  className="tab-button"
+                  onClick={() => {setTab(4)}}
+                >
+                  <span className={`${tab == 4 && "active-tab"}`}>Ui/Ux</span>
+                </div>
+              </Hover>
+            </div>
+            <div className="projects-list">
+              <ImageList variant="masonry" cols={cols} gap={40}>
+              {
+                tab == 1 &&
+                projects.map((index: IProjectData) => (
+                  <ProjectsList item={index}/>
+                ))
+              }
+              {
+                tab == 2 &&
+                projects.filter((item) => {
+                    return item.tag == "app";
+                }).map((index) => (
+                  <ProjectsList item={index}/>
+                ))
+              }
+              {
+                tab == 3 &&
+                projects.filter((item) => {
+                    return item.tag == "web";
+                }).map((index) => (
+                  <ProjectsList item={index as IProjectData}/>
+                ))
+              }
+              {
+                tab == 4 &&
+                projects.filter((item) => {
+                    return item.tag == "ui/ux";
+                }).map((index) => (
+                  <ProjectsList item={index as IProjectData}/>
+                ))
+              }
+              </ImageList>
+            </div>
           </div>
         </div>
       </div>

@@ -20,14 +20,14 @@ export default function Header(
     const dropdown = document.getElementById("dropdown");
 
     if(left && right && dropdown) {
-      if(dropdown.classList.length > 1) {
-        dropdown.classList.remove("expand");
-        left.classList.remove("left-line");
-        right.classList.remove("right-line");
-      } else {
+      if(click) {
         left.classList.add("left-line");
         right.classList.add("right-line");
         dropdown.classList.add("expand");
+      } else {
+        dropdown.classList.remove("expand");
+        left.classList.remove("left-line");
+        right.classList.remove("right-line");
       }
     }
   }, [click]);
