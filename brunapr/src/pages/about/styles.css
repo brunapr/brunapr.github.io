@@ -20,7 +20,7 @@
 
 .about-me-wrapper > * > div {
   width: 100%;
-  height: 100%;
+  height: calc(75vh - 35px);
   background-color: var(--box-color);
 
   display: flex;
@@ -209,6 +209,9 @@
     margin-right: 5%;
   }
 
+  .about-me-wrapper > * > div {
+    height: fit-content;
+  }
 
   .skillset-gif-wrapper img {
     width: 8vw;

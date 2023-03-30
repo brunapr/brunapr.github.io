@@ -5,16 +5,16 @@
   flex-direction: column;
 }
 
-.projects-wrapper > div {
-  margin: 0 5%;
-  width: 90%;
-  height: 84%;
-  padding: 40px;
-  background-color: var(--box-color);
+.projects-wrapper .projects {
+  height: 75vh;
 }
 
-.projects-wrapper h1 {
-  margin-left: 5%;
+.projects-wrapper > .projects > div {
+  margin: 0 5%;
+  width: 87%;
+  height: calc(67vh - 35px);
+  padding: 40px;
+  background-color: var(--box-color);
 }
 
 .projects-tab {
@@ -44,8 +44,8 @@
 }
 
 .projects-list {
-  height: 94%;
-  width: 97%;
+  height: 92%;
+  width: 100%;
   margin-top: 10px;
   overflow-y: scroll;
   -ms-overflow-style: none; 
@@ -162,20 +162,26 @@
 
 @media screen and (max-width: 1200px) {
   .projects-wrapper > div {
-    margin-left: 0;
-    width: 91%;
+    width: 90%;
+    margin: 0px 5%;
   }
 
-  .projects-wrapper h1 {
-    margin-left: 0;
-  }
-
-  .projects-list {
-    width: 100%;
+  .projects-wrapper > .projects > div {
+    margin: 0px;
+    width: 92%;
   }
 }
 
 @media screen and (max-width: 900px) {
+  .projects-wrapper > div {
+    width: 100%;
+    margin: 0px;
+  }
+
+  .projects-wrapper > .projects > div {
+    width: 80%;
+  }
+
   .projects-wrapper {
     max-width: 600px;
   }
@@ -191,14 +197,6 @@
 }
 
 @media screen and (max-width: 700px) {
-  .projects-wrapper > div {
-    padding: 10%;
-  }
-
-  .projects-wrapper > div {
-    width: 80%;
-  }
-
   .projects-list {
     margin-top: 5%;
   }
@@ -234,5 +232,9 @@
 
   .projects-tab > div {
     padding: 0 !important;
+  }
+
+  .projects-wrapper > .projects > div {
+    padding: 10%;
   }
 }
