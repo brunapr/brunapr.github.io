@@ -11,8 +11,9 @@
 
 .projects-wrapper > .projects > div {
   margin: 0 5%;
-  width: 87%;
-  height: calc(67vh - 35px);
+  width: 95%;
+  box-sizing: border-box;
+  height: calc(75vh - 35px);
   padding: 40px;
   background-color: var(--box-color);
 }
@@ -168,7 +169,7 @@
 
   .projects-wrapper > .projects > div {
     margin: 0px;
-    width: 92%;
+    width: 100%;
   }
 }
 
@@ -176,10 +177,6 @@
   .projects-wrapper > div {
     width: 100%;
     margin: 0px;
-  }
-
-  .projects-wrapper > .projects > div {
-    width: 80%;
   }
 
   .projects-wrapper {

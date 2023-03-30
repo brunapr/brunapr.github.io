@@ -86,8 +86,9 @@
   justify-content: space-between;
 }
 
-.icons a:visited {
-  color: var(--text-color);
+.icons a, .icons a:active, .icons a:visited {
+  color: var(--text-color) !important;
+  text-decoration: none !important;
 }
 
 @media screen and (max-width: 1200px) {
