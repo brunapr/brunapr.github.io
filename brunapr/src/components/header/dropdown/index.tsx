@@ -29,7 +29,6 @@ export default function Dropdown(
 
   function handleLanguage(lang: string) {
     setLanguage(lang);
-    localStorage.setItem("language", lang);
   }
 
   return(
@@ -62,14 +61,14 @@ export default function Dropdown(
       <div className="dropdown-language">
         <Hover>
           <div 
-            className={`language ${language == 'en' && "opacity" }`} 
-            onClick={()=>{handleLanguage("pt")}}
+            className={`language ${language == 'en-US' && "opacity" }`} 
+            onClick={()=>{setLanguage("pt-BR")}}
           >PT-BR</div>
         </Hover>
         <Hover>
           <div 
-            className={`language ${language == 'pt' && "opacity" }`}
-            onClick={()=>{handleLanguage("en")}}
+            className={`language ${language == 'pt-BR' && "opacity" }`}
+            onClick={()=>{setLanguage("en-US")}}
           >ENG</div>
         </Hover>
       </div>
