@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.6e74f388.css",
-    "main.js": "/static/js/main.89b99a1d.js",
+    "main.js": "/static/js/main.4bcbac1d.js",
     "static/media/hommy.png": "/static/media/hommy.fa502c3522bafab20b8c.png",
     "static/media/cleanmarine.png": "/static/media/cleanmarine.fba0552c87f7b7eb7e34.png",
     "static/media/hommyapp.png": "/static/media/hommyapp.ed68f65be36938eed889.png",
@@ -30,10 +30,10 @@
     "static/media/css.png": "/static/media/css.463e319bad8e0edf1ef7.png",
     "index.html": "/index.html",
     "main.6e74f388.css.map": "/static/css/main.6e74f388.css.map",
-    "main.89b99a1d.js.map": "/static/js/main.89b99a1d.js.map"
+    "main.4bcbac1d.js.map": "/static/js/main.4bcbac1d.js.map"
   },
   "entrypoints": [
     "static/css/main.6e74f388.css",
-    "static/js/main.89b99a1d.js"
+    "static/js/main.4bcbac1d.js"
   ]
 }
