@@ -6,6 +6,7 @@
   left: 40px;
   bottom: 0;
   animation: 8s hidetip forwards;
+  transition: 0.5s;
 }
 
 .scroll-tip-wrapper .scroll-text {

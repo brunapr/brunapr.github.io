@@ -213,10 +213,6 @@
     margin-right: 5%;
   }
 
-  .about-me-wrapper > * > div {
-    height: fit-content;
-  }
-
   .skillset-gif-wrapper img {
     width: 8vw;
   }
@@ -228,7 +224,7 @@
 
 @media screen and (max-width: 900px) {
 
-  .about-me-wrapper > .who-i-am,
+  .about-me-wrapper .who-i-am > div,
   .about-me-wrapper .skillset > div {
     height: fit-content;
   }

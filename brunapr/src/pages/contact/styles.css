@@ -130,7 +130,7 @@
   visibility: visible;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1200px) {
   .contact-text-link .tooltiptext::before {
     left: 35px;
     bottom: -4px;
