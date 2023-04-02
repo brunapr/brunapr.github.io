@@ -124,10 +124,38 @@
   bottom: 8px;
 }
 
-
 .round-link:hover .tooltiptext,
 .contact-text-link:hover .tooltiptext {
   visibility: visible;
+}
+
+#contact {
+  position: relative;
+}
+
+.copy-alert {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  background-color: var(--text-color);
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  animation: 3s drop forwards;
+}
+
+@keyframes drop {
+  10% {
+    top: 5%;
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 5%;
+    opacity: 0;
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -141,6 +169,14 @@
     margin-left: -40px;
     bottom: 30px;
   } 
+}
+
+@media screen and (max-width: 900px) {
+  .contact-text-link .tooltiptext,
+  .contact-text-link .tooltiptext::before,
+  .contact-text-link:hover .tooltiptext {
+    visibility: hidden;
+  }
 }
 
 @media screen and (max-width: 400px) {
