@@ -14,13 +14,19 @@ export default function Contact() {
   function handleOnCopy(text: string) {
     navigator.clipboard.writeText(text);
     setIsCopied(true);
+    setTimeout(() => {
+      setIsCopied(false);
+    }, 3000)
   }
 
   return(
     <div id="contact" className="slide-child-wrapper">
-      <div className="copy-alert">
-        {Translate("copied!")}
-      </div>
+      {
+        isCopied &&
+        <div className="copy-alert">
+          {Translate("copied!")}
+        </div>
+      }
       <h1 className="contact-title">{Translate("contact")}</h1>
       <div className="contact-wrapper">
         <div className="contact-texts">
@@ -32,11 +38,7 @@ export default function Contact() {
                 onClick={() => { handleOnCopy("brunapr@ic.ufrj.br") }}
               >
                 <RxCopy size={20}/>
-                {
-                  isCopied ?
-                  <span className="tooltiptext">{Translate("copied!")}</span> :
-                  <span className="tooltiptext">{Translate("copy")}</span>
-                }
+                <span className="tooltiptext">{Translate("copy")}</span>
               </div>
             </Hover>
           </div>
