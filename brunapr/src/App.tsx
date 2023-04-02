@@ -15,7 +15,14 @@ import ScrollTip from './components/scrollTip';
 
 function App() {
   const [ slide, setSlide ] = useState(1);
+  const [ visibleTip, setVisibleTip ] = useState(true);
   const { language } = useContext(LanguageContext);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setVisibleTip(false);
+    }, 8000)
+  }, [])
   
   return (
     <div className="app">
@@ -26,7 +33,10 @@ function App() {
           <Header slide={slide} setSlide={setSlide}/>
           <SlideDots slide={slide} setSlide={setSlide}/>
           <Main slide={slide} setSlide={setSlide}/>
-          <ScrollTip/>
+          {
+            visibleTip &&
+            <ScrollTip/>
+          }
         </div>
       }
       <Cursor/>

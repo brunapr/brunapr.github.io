@@ -196,6 +196,7 @@
 @media screen and (max-width: 700px) {
   .projects-list {
     margin-top: 5%;
+    height: 90%;
   }
 
   .list-item-wrapper .list-item-bottom .item-tag {
