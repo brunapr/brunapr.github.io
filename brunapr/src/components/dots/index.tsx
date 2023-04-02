@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import useForceRerender from '../../hooks/useForceRerender';
 import useWindowDimensions from '../../hooks/useWindowDimensions';
+import Hover from '../cursor';
 import './styles.css';
 
 export default function SlideDots(
@@ -51,20 +52,39 @@ export default function SlideDots(
     }, false);
   }
 
+  function goTo(slide: string) {
+    props.setSlide(
+      slide == "home" ? 1 : 
+      slide == "about" ? 2 :
+      slide == "projects" ? 3 : 4);
+    const scroll = document.getElementById(slide);
+    if(scroll){
+      scroll.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  }
+
   return(
     <div className="dots-wrapper">
-      <div 
-        className={`slider-dot ${props.slide == 1 && "dot-grow"}`}
-      />
-      <div 
-        className={`slider-dot ${props.slide == 2 && "dot-grow"}`}
-      />
-      <div 
-        className={`slider-dot ${props.slide == 3 && "dot-grow"}`}
-      />
-      <div 
-        className={`slider-dot ${props.slide == 4 && "dot-grow"}`}
-      />
+      <Hover>
+        <div 
+          className={`slider-dot ${props.slide == 1 && "dot-grow"}`}
+          onClick={() => { goTo("home") }}
+        />
+        <div 
+          className={`slider-dot ${props.slide == 2 && "dot-grow"}`}
+          onClick={() => { goTo("about") }}
+        />
+        <div 
+          className={`slider-dot ${props.slide == 3 && "dot-grow"}`}
+          onClick={() => { goTo("projects") }}
+        />
+        <div 
+          className={`slider-dot ${props.slide == 4 && "dot-grow"}`}
+          onClick={() => { goTo("contact") }}
+        />
+      </Hover>
     </div>
   );
 }

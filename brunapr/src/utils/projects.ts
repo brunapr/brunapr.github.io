@@ -68,7 +68,7 @@ const projects = [
     name: "Notice.me",
     tag: "app",
     src: "noticeme",
-    url: "https://github.com/brunapr/hommy-landing",
+    url: "https://github.com/brunapr/Notice.me",
   },
   {
     id: 10,
