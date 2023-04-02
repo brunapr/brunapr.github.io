@@ -1,23 +1,26 @@
-import './styles.css';
-
-import { HiOutlineMail, HiDownload } from 'react-icons/hi';
-import { RxDiscordLogo, RxCopy } from 'react-icons/rx';
-import { FaWhatsapp } from 'react-icons/fa';
+import { useState } from 'react';
+import { HiDownload } from 'react-icons/hi';
+import { RxCopy } from 'react-icons/rx';
 import Hover from '../../components/cursor';
 import Translate from '../../utils/translate';
-import { useState } from 'react';
+import useWindowDimensions from '../../hooks/useWindowDimensions';
+import './styles.css';
 
 export default function Contact() {
 
   const [ isCopied, setIsCopied ] = useState(false);
+  const { width } = useWindowDimensions();
 
   function handleOnCopy(text: string) {
     navigator.clipboard.writeText(text);
-    setIsCopied(!isCopied);
+    setIsCopied(true);
   }
 
   return(
     <div id="contact" className="slide-child-wrapper">
+      <div className="copy-alert">
+        {Translate("copied!")}
+      </div>
       <h1 className="contact-title">{Translate("contact")}</h1>
       <div className="contact-wrapper">
         <div className="contact-texts">
@@ -51,32 +54,6 @@ export default function Contact() {
             </Hover>
           </div>
         </div>
-        {/* <div className="contact-links">
-          <Hover>
-            <div className="round-link">
-              <HiOutlineMail size={24}/>
-              <span className="tooltiptext">{Translate("open")}</span>
-            </div>
-          </Hover>
-          <Hover>
-            <div 
-              className="round-link"
-              onClick={() => { handleOnCopy("+5521998539837") }}
-            >
-              <FaWhatsapp size={24}/>
-              <span className="tooltiptext">{tooltip}</span>
-            </div>
-          </Hover>
-          <Hover>
-            <div 
-              className="round-link"
-              onClick={() => { handleOnCopy("Seth#0143") }}
-            >
-              <RxDiscordLogo size={24}/>
-              <span className="tooltiptext">{tooltip}</span>
-            </div>
-          </Hover>
-        </div> */}
       </div>
     </div>
   );

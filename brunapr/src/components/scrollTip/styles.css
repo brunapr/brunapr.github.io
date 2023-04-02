@@ -1,0 +1,75 @@
+.scroll-tip-wrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 40px;
+  bottom: 0;
+  animation: 8s hidetip forwards;
+  transition: 0.5s;
+}
+
+.scroll-tip-wrapper .scroll-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+.scroll-tip-wrapper .scroll-line {
+  width: 2px;
+  background-color: var(--text-color);
+  height: 10vh;
+  animation: 8s skrink infinite;
+}
+
+@keyframes hidetip {
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes skrink {
+  25%, 75% {
+    height: 15vh;
+  }
+  50%, 100% {
+    height: 10vh;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .scroll-tip-wrapper {
+    flex-direction: row;
+    right: 0;
+    left: unset;
+    bottom: 80px;
+  }
+
+  .scroll-tip-wrapper .scroll-text {
+    flex-direction: row;
+    letter-spacing: 5px;
+    margin-bottom: 0;
+    margin-right: 20px;
+  }
+
+  .scroll-tip-wrapper .scroll-line {
+    width: 15vw;
+    height: 2px;
+    animation: 8s skrink-row infinite;
+  }
+
+  @keyframes skrink-row {
+    25%, 75% {
+      width: 20vw;
+    }
+    50%, 100% {
+      width: 15vw;
+    }
+  }
+
+}

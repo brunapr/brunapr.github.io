@@ -11,6 +11,7 @@ import './assets/fonts/Montserrat/Montserrat-Regular.ttf';
 import './assets/fonts/Montserrat/Montserrat-Italic.ttf';
 import './assets/fonts/Montserrat/Montserrat-Bold.ttf';
 import { LanguageContext } from './contexts/languageContext';
+import ScrollTip from './components/scrollTip';
 
 function App() {
   const [ slide, setSlide ] = useState(1);
@@ -25,6 +26,7 @@ function App() {
           <Header slide={slide} setSlide={setSlide}/>
           <SlideDots slide={slide} setSlide={setSlide}/>
           <Main slide={slide} setSlide={setSlide}/>
+          <ScrollTip/>
         </div>
       }
       <Cursor/>
