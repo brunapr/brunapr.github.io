@@ -1,0 +1,138 @@
+@import "tailwindcss";
+@import "tailwindcss-animated";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  --font-mono: "PT Mono", monospace;
+  --font-abz: "ABeeZee", sans-serif;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  overflow: hidden;
+  min-width: 100vw;
+  min-height: 100vh;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: oklch(27.9% 0.041 260.031);
+}
+
+.click-bounce {
+  animation: bounce-once 0.5s forwards;
+  transform-origin: center;
+}
+
+.mount-bounce {
+  animation: mount-bounce 0.15s forwards ease-in;
+  transform-origin: center;
+}
+
+.unmount-bounce {
+  animation: unmount-bounce 0.1s forwards ease-out;
+  transform-origin: center;
+}
+
+.mount-fill {
+  animation: fill 1s forwards ease-in
+}
+
+.mount-surge {
+  animation: mount-surge 0.2s forwards ease-in;
+}
+
+.unmount-surge {
+  animation: unmount-surge 0.1s forwards ease-out;
+}
+
+@keyframes bounce-once {
+
+  0%,
+  100% {
+    transform: scale(1, 1);
+  }
+
+  50% {
+    transform: scale(0.8, 0.8);
+  }
+}
+
+@keyframes mount-bounce {
+  0% {
+    transform: scale(0.5, 0.5);
+  }
+
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes unmount-bounce {
+  0% {
+    transform: scale(1, 1);
+  }
+
+  100% {
+    transform: scale(0.5, 0.5);
+  }
+}
+
+@keyframes mount-surge {
+  0% {
+    transform: translateY(600px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes unmount-surge {
+  0% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(600px);
+  }
+}
+
+@keyframes fill {
+
+  0% {
+    width: 0px;
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 100%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: oklch(94.3% 0.029 294.588);
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: oklch(89.4% 0.057 293.283);
+  border-radius: 100px;
+}
+
+[data-theme=dark] ::-webkit-scrollbar-track {
+  background-color: oklch(37.2% 0.044 257.287);
+}
+
+[data-theme=dark] ::-webkit-scrollbar-thumb {
+  background-color: oklch(44.6% 0.043 257.281);
+}
