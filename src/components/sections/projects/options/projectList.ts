@@ -32,20 +32,20 @@ export const projectsList: Project[] = [
     title: "Nutri.me",
     tags: "UI/UX",
     link: "https://www.behance.net/gallery/140113727/nutrime",
-    description: "Healthy menu solution that considers each user's preferences and dietary restrictions."
+    description: "Healthy menu solution that considers user's preferences and dietary restrictions."
   },
   {
     code: "cleanmarine",
     title: "Clean Marine",
     tags: "UI/UX",
-    description: "Aligned with SDG 14 - Life Below Water, it's a solution that seeks to encourage beach cleanups through gamification."
+    description: "Aligned with SDG 14, it's a solution that seeks to encourage beach cleanups through gamification."
   },
   {
     code: "happy",
     title: "Happy",
     tags: "Web",
     link: "https://github.com/brunapr/Happy",
-    description: "Project created to better learn ReactJs and web systems, developed following NLW#3 videos."
+    description: "Project created to better learn ReactJs, developed following NLW#3 videos."
   },
   {
     code: "lavanda",
@@ -58,13 +58,13 @@ export const projectsList: Project[] = [
     title: "Hommy",
     tags: "Web",
     link: "https://github.com/brunapr/hommy-landing",
-    description: "Technical training challenge project for EJCM. Landing page created to help students find housing."
+    description: "Technical training challenge landing page project for EJCM."
   },
   {
     code: "pokefile",
     title: "Pokéfile",
     tags: "Web",
     link: "https://github.com/andradenathan/pokefile",
-    description: "Creation of a Pokémon platform where users can save Pokémon and display their profile to friends."
+    description: "Pokémon platform where users can save Pokémon and display their profile to friends."
   },
 ]

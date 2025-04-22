@@ -21,6 +21,6 @@ export default function About() {
   return isMobile ? (
     <TabContainerMobile {...props} />
   ) : (
-    <TabContainer {...props} />
+    <TabContainer maxWidth="max-w-[600px]" {...props} />
   );
 }

@@ -21,6 +21,6 @@ export default function Experience() {
   return isMobile ? (
     <TabContainerMobile {...props} />
   ) : (
-    <TabContainer {...props} />
+    <TabContainer maxWidth="max-w-[750px]" {...props} />
   );
 }

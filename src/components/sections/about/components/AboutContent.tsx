@@ -22,7 +22,7 @@ export default function AboutContent() {
 
   return (
     <div>
-      <div className="flex items-center space-x-6">
+      <div className="flex items-center space-x-6 w-full">
         <img
           src={`/assets/about/${theme === THEME.LIGHT ? "violet" : "indigo"}.png`}
           alt="pixel art drawing of bruna"

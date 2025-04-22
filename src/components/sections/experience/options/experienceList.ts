@@ -19,6 +19,8 @@ export const experiences: ExperienceData[] = [
       "Company CMS development with ReactJs",
       "Company website development with NextJs",
       "White-label Catalog solution development in NextJs",
+      "Implementation of Storybook design system for all projects",
+      "AWS build verifications and deployment monitoring"
     ]
   },
   {

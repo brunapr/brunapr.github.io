@@ -21,6 +21,6 @@ export default function Projects() {
   return isMobile ? (
     <TabContainerMobile {...props} />
   ) : (
-    <TabContainer {...props} />
+    <TabContainer maxWidth="max-w-[500px]" {...props} />
   );
 }

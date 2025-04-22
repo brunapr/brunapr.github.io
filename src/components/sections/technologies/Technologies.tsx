@@ -21,6 +21,6 @@ export default function Technologies() {
   return isMobile ? (
     <TabContainerMobile {...props} />
   ) : (
-    <TabContainer {...props} />
+    <TabContainer maxWidth="max-w-[305px]" {...props} />
   );
 }

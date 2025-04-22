@@ -42,14 +42,14 @@ function DesktopButton({ title, ref, Icon }: Button) {
       onClick={handleToggle}
       className="w-fit justify-self-center cursor-pointer rounded-lg md:hover:bg-violet-200 md:hover:dark:bg-slate-400/10 p-3 flex flex-col space-y-1.5 items-center justify-center">
       {Icon}
-      <span className="dark:text-slate-500">{title === "about" ? "about" : title}</span>
+      <span className="dark:text-slate-400">{title === "about" ? "about" : title}</span>
     </button>
   );
 }
 
 export default function Desktop() {
   const { theme } = useThemeStore()
-  const iconProps = { className: "dark:text-slate-500", size: 32 }
+  const iconProps = { className: "dark:text-slate-400", size: 32 }
 
   const aboutRef = useRef<HTMLButtonElement>(null)
   const skillsRef = useRef<HTMLButtonElement>(null)
@@ -71,9 +71,9 @@ export default function Desktop() {
   }
 
   return (
-    <DesktopTab title="home">
+    <DesktopTab>
       <div className="flex flex-col items-center">
-        <div className="flex max-md:flex-col max-md:items-center justify-center w-full text-5xl dark:text-slate-500 w-full transition-all">
+        <div className="flex max-md:flex-col max-md:items-center justify-center w-full text-5xl dark:text-slate-400 w-full transition-all">
           <div className="w-fit">
             <span >hi,</span>
             <span className="max-md:mr-0 mx-5">i'm</span>

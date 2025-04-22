@@ -7,6 +7,7 @@ interface Props {
   title: string;
   children: ReactNode;
   ref: RefObject<HTMLDivElement | null>
+  maxWidth: string
   tab?: Tab;
   setTab?: (tab: Tab) => void;
   toggle?: () => void;
@@ -17,6 +18,7 @@ export default function TabContainer({
   tab,
   setTab,
   ref,
+  maxWidth,
   toggle,
   children,
 }: Props) {
@@ -143,7 +145,7 @@ export default function TabContainer({
       </div>
       <div
         style={{ ...(width > 0 && { width }) }}
-        className={`max-w-[600px] w-full [&>*]:p-8 select-text md:bg-violet-100 max-h-[600px] dark:md:bg-slate-700 text-slate-800 dark:text-slate-400 rounded-b-md flex flex-col items-center justify-center`}
+        className={`${maxWidth} w-fit [&>*]:p-8 select-text md:bg-violet-100 max-h-[600px] dark:md:bg-slate-700 text-slate-800 dark:text-slate-400 rounded-b-md flex flex-col items-center justify-center`}
       >
         {children}
       </div>
