@@ -73,7 +73,7 @@ export default function Desktop() {
   return (
     <DesktopTab>
       <div className="flex flex-col items-center">
-        <div className="flex max-md:flex-col max-md:items-center justify-center w-full text-5xl dark:text-slate-400 w-full transition-all">
+        <div className="flex max-md:flex-col max-md:items-center justify-center w-[200px] lg:w-full text-5xl dark:text-slate-400 transition-all">
           <div className="w-fit">
             <span >hi,</span>
             <span className="max-md:mr-0 mx-5">i'm</span>

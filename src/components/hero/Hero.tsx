@@ -8,7 +8,8 @@ export default function Hero() {
   useEffect(() => {
     function parallax(e: any) {
       document.querySelectorAll(".moving-object").forEach((move: any) => {
-        let moving_value = move.getAttribute("data-value");
+        let moving_value = "0"
+        // let moving_value = move.getAttribute("data-value");
 
         if (moving_value) {
           let x = (e.clientX * parseInt(moving_value)) / 250

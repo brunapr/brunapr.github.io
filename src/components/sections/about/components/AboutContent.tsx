@@ -21,7 +21,7 @@ export default function AboutContent() {
   const iconClass = "group-hover:text-slate-100 group-hover:fill-slate-100 dark:text-slate-400 text-slate-800 dark:fill-slate-400 fill-slate-800"
 
   return (
-    <div>
+    <div className="max-h-[600px] h-full overflow-y-auto overflow-x-hidden">
       <div className="flex items-center space-x-6 w-full">
         <img
           src={`/assets/about/${theme === THEME.LIGHT ? "violet" : "indigo"}.png`}

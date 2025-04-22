@@ -47,6 +47,22 @@ body {
   animation: unmount-surge 0.1s forwards ease-out;
 }
 
+.animate-move {
+  animation: move infinite ease-in-out;
+}
+
+@keyframes move {
+
+  0%,
+  100% {
+    transform: translateX(-20px);
+  }
+
+  50% {
+    transform: translateX(20px);
+  }
+}
+
 @keyframes bounce-once {
 
   0%,
