@@ -16,9 +16,10 @@ interface TabsStore {
   getTab: (tabName: TabList) => Tab;
   setTab: (tabName: TabList, tab: Tab) => void;
   toggleTab: (tabName: TabList) => void;
+  closeAllTabs: () => void;
 }
 
-export type TabList = keyof Omit<TabsStore, 'setTab' | 'toggleTab' | 'getHighestZIndex' | 'getTab'>
+export type TabList = keyof Omit<TabsStore, 'setTab' | 'toggleTab' | 'getHighestZIndex' | 'getTab' | 'closeAllTabs'>
 
 const initialValue: Tab = { open: false, x: 0, y: 0, z: 1 }
 
@@ -79,4 +80,11 @@ export const useTabsStore = create<TabsStore>()((set, get) => ({
         }
       };
     }),
+
+  closeAllTabs: () => set({
+    about: initialValue,
+    skills: initialValue,
+    projects: initialValue,
+    experience: initialValue,
+  }),
 }));

@@ -2,6 +2,7 @@ import { X } from "lucide-react";
 import { ReactNode, RefObject, useEffect, useRef, useState } from "react";
 import { Tab } from "../../stores/tabsStore";
 import useSound from "../../hooks/useSound";
+import { TranslationKey, useLocaleStore } from "../../stores/localeStore";
 
 interface Props {
   title: string;
@@ -25,7 +26,9 @@ export default function TabContainer({
   const handleRef = useRef<HTMLDivElement>(null);
   const startPos = useRef({ x: 0, y: 0 });
   const mouseStartPos = useRef({ x: 0, y: 0 });
+  const { t } = useLocaleStore()
   const closeTabSound = useSound('/assets/sounds/close.wav');
+
   const [width, setWidth] = useState(0)
   const [isDragging, setIsDragging] = useState(false);
 
@@ -135,7 +138,7 @@ export default function TabContainer({
         ref={handleRef}
         className={`cursor-grab active:cursor-grabbing font-abz bg-violet-400 dark:bg-indigo-400 flex border-b-3 border-slate-800 text-slate-800 dark:text-slate-800 px-8 py-3 rounded-t-md tracking-wider w-full items-center justify-between`}
       >
-        <span>{title}</span>
+        <span>{t(title as TranslationKey)}</span>
         <button
           onClick={(e) => handleCloseTab(e)}
           className="cursor-pointer hover:bg-slate-100/10 rounded-full p-1 mr-[-8px]"

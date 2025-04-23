@@ -4,6 +4,7 @@ import { TabList, useTabsStore } from "../../stores/tabsStore";
 import { THEME, useThemeStore } from "../../stores/themeStore";
 import useSound from "../../hooks/useSound";
 import DesktopTab from "./components/DesktopTab";
+import { useLocaleStore } from "../../stores/localeStore";
 
 interface Button {
   title: TabList;
@@ -13,6 +14,7 @@ interface Button {
 
 function DesktopButton({ title, ref, Icon }: Button) {
   const openTabSound = useSound('/assets/sounds/modern.wav');
+  const { t } = useLocaleStore()
   const { toggleTab } = useTabsStore()
 
   function handleToggle() {
@@ -42,13 +44,14 @@ function DesktopButton({ title, ref, Icon }: Button) {
       onClick={handleToggle}
       className="w-fit justify-self-center cursor-pointer rounded-lg md:hover:bg-violet-200 md:hover:dark:bg-slate-400/10 p-3 flex flex-col space-y-1.5 items-center justify-center">
       {Icon}
-      <span className="dark:text-slate-400">{title === "about" ? "about" : title}</span>
+      <span className="dark:text-slate-400">{t(title)}</span>
     </button>
   );
 }
 
 export default function Desktop() {
   const { theme } = useThemeStore()
+  const { t } = useLocaleStore()
   const iconProps = { className: "dark:text-slate-400", size: 32 }
 
   const aboutRef = useRef<HTMLButtonElement>(null)
@@ -75,15 +78,15 @@ export default function Desktop() {
       <div className="flex flex-col items-center">
         <div className="flex max-md:flex-col max-md:items-center justify-center w-[200px] lg:w-full text-5xl dark:text-slate-400 transition-all">
           <div className="w-fit">
-            <span >hi,</span>
-            <span className="max-md:mr-0 mx-5">i'm</span>
+            <span >{t('desktop_title_1')}</span>
+            <span className="max-md:mr-0 mx-5">{t('desktop_title_2')}</span>
           </div>
           <div className="w-fit max-md:mr-[-0.5rem] flex items-center">
             <span className="text-violet-400 dark:text-indigo-400 font-abz mr-1">Bruna</span>
             <span className="text-4xl mt-[-1px]">{theme === THEME.LIGHT ? "✨" : "🌙"}</span>
           </div>
         </div>
-        <span className="w-full text-center font-abz italic text-slate-500 md:text-slate-400 dark:text-slate-500 md:dark:text-slate-500 mt-2">front-end developer & ui/ux explorer</span>
+        <span className="w-full text-center font-abz italic text-slate-500 md:text-slate-400 dark:text-slate-500 md:dark:text-slate-500 mt-2">{t("desktop_subtitle")}</span>
         <div className="w-fit grid grid-cols-2 md:flex md:space-x-4 mt-10 ">
           {
             buttons.map(({ title, Icon }) => {

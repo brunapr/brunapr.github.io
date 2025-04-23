@@ -13,7 +13,7 @@ export function Clouds() {
       src: "/assets/cloud_2.svg",
       move: "5",
       duration: "10s",
-      className: `${commonStyle} bottom-6 left-[-15rem] scale-80 lg:scale-80 lg:bottom-10 lg:left-[-10rem]`,
+      className: `${commonStyle} bottom-6 left-[-10rem] scale-80 lg:scale-80 lg:bottom-10`,
       alt: "bottom left cloud"
     },
     {

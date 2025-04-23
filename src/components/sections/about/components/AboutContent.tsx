@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { THEME, useThemeStore } from "../../../../stores/themeStore";
 import { Linkedin, Github } from "lucide-react";
+import { useLocaleStore } from "../../../../stores/localeStore";
 
 function ContactButton({ children }: { children: ReactNode }) {
   return (
@@ -17,6 +18,7 @@ function ContactButton({ children }: { children: ReactNode }) {
 
 export default function AboutContent() {
   const { theme } = useThemeStore()
+  const { t } = useLocaleStore()
 
   const iconClass = "group-hover:text-slate-100 group-hover:fill-slate-100 dark:text-slate-400 text-slate-800 dark:fill-slate-400 fill-slate-800"
 
@@ -30,13 +32,13 @@ export default function AboutContent() {
         />
         <div className="flex flex-col space-y-1 h-40 justify-center">
           <h1 className="text-5xl font-abz dark:text-indigo-400 text-violet-400">Bruna Pimenta</h1>
-          <span className="font-abz italic text-slate-400 dark:text-slate-500 leading-5 text-sm">front-end developer with 3+ years of experience</span>
+          <span className="font-abz italic text-slate-400 dark:text-slate-500 leading-5 text-sm">{t("about_subtitle")}</span>
         </div>
       </div>
       <div className="space-y-4 mt-10 font-mono">
-        <p>I'm a <span className="dark:bg-indigo-400 dark:text-slate-800 bg-violet-400">front-end developer</span> who discovered my passion for the field when I joined <span className="border-b">UFRJ</span> and participated in <span className="border-b">EJCM</span>, a Junior Enterprise.
+        <p>{t("about_1")} <span className="dark:bg-indigo-400 dark:text-slate-800 bg-violet-400">{t("about_2")}</span> {t("about_3")} <span className="border-b">UFRJ</span> {t("about_4")} <span className="border-b">EJCM</span>{t("about_5")}
         </p>
-        <p>My goal is to create interfaces that not only work but tell stories and solve <span className="text-stroke">real problems</span>. To me, seeing everything come together in code is like <b className="dark:text-indigo-400 text-violet-400">magic</b>!
+        <p>{t("about_6")} <span className="text-stroke">{t("about_7")}</span>{t("about_8")} <b className="dark:text-indigo-400 text-violet-400">{t("about_9")}</b>!
         </p>
         <p>email: <span className="border-b">rbrmnt@gmail.com</span></p>
       </div>

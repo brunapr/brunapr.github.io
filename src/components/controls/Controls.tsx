@@ -4,15 +4,21 @@ import { THEME, useThemeStore } from "../../stores/themeStore";
 import Container from "../container/Container";
 import { RefObject, useRef } from "react";
 import useSound from "../../hooks/useSound";
+import { LOCALE, useLocaleStore } from "../../stores/localeStore";
 
 export default function Controls() {
   const toggleControlSound = useSound('/assets/sounds/cool.wav');
 
   const { theme, toggleTheme } = useThemeStore()
   const { audio, toggleAudio } = useAudioStore()
+  const { locale, toggleLocale } = useLocaleStore()
 
   const themeRef = useRef<HTMLButtonElement>(null)
   const audioRef = useRef<HTMLButtonElement>(null)
+  const localeRef = useRef<HTMLButtonElement>(null)
+
+  const commonStyle = "w-12 h-12 flex items-center justify-center cursor-pointer hover:bg-slate-300/30 dark:hover:bg-slate-100/10 rounded-full transition"
+  const iconStyle = "text-slate-800 dark:text-slate-100"
 
   function handleToggle(ref: RefObject<HTMLButtonElement | null>, action: () => void) {
     action();
@@ -38,13 +44,13 @@ export default function Controls() {
         type="button"
         ref={themeRef}
         onClick={() => handleToggle(themeRef, toggleTheme)}
-        className={`p-2.5 cursor-pointer hover:bg-slate-300/30 dark:hover:bg-slate-100/10 rounded-full transition`}
+        className={commonStyle}
       >
         <div>
           {
             theme === THEME.LIGHT ?
-              <Sun className="text-slate-800" strokeWidth={2} size={32} /> :
-              <Moon className="text-slate-100" strokeWidth={2} size={32} />
+              <Sun className={iconStyle} strokeWidth={2.2} size={24} /> :
+              <Moon className={iconStyle} strokeWidth={2.2} size={24} />
           }
         </div>
       </button>
@@ -52,12 +58,26 @@ export default function Controls() {
         type="button"
         ref={audioRef}
         onClick={() => handleToggle(audioRef, toggleAudio)}
-        className={`p-2.5 cursor-pointer hover:bg-slate-300/30 dark:hover:bg-slate-100/10 rounded-full transition`}>
+        className={commonStyle}>
         <div>
           {
             audio ?
-              <Volume2 className="text-slate-800 dark:text-slate-100" strokeWidth={2} size={32} /> :
-              <VolumeX className="text-slate-800 dark:text-slate-100" strokeWidth={2} size={32} />
+              <Volume2 className={iconStyle} strokeWidth={2} size={24} /> :
+              <VolumeX className={iconStyle} strokeWidth={2} size={24} />
+          }
+        </div>
+      </button>
+      <button
+        type="button"
+        ref={localeRef}
+        onClick={() => handleToggle(localeRef, toggleLocale)}
+        className={commonStyle}
+      >
+        <div>
+          {
+            locale === LOCALE.EN ?
+              <span className={`${iconStyle} font-mono text-xl px-0.5`}>EN</span> :
+              <span className={`${iconStyle} font-mono text-xl px-0.5`}>PT</span>
           }
         </div>
       </button>
