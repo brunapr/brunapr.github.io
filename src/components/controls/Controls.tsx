@@ -17,7 +17,7 @@ export default function Controls() {
   const audioRef = useRef<HTMLButtonElement>(null)
   const localeRef = useRef<HTMLButtonElement>(null)
 
-  const commonStyle = "w-12 h-12 flex items-center justify-center cursor-pointer hover:bg-slate-300/30 dark:hover:bg-slate-100/10 rounded-full transition"
+  const commonStyle = "w-12 h-12 flex items-center justify-center cursor-pointer md:hover:bg-slate-300/30 md:dark:hover:bg-slate-100/10 rounded-full transition"
   const iconStyle = "text-slate-800 dark:text-slate-100"
 
   function handleToggle(ref: RefObject<HTMLButtonElement | null>, action: () => void) {
