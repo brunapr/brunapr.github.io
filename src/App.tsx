@@ -23,7 +23,7 @@ function App() {
   }, [isMobile]);
 
   return (
-    <div id="home" data-theme={theme} className="w-screen h-[100vh] bg-slate-800 flex justify-center">
+    <div id="home" data-theme={theme} className="w-screen h-dvh md:h-screen bg-slate-800 flex justify-center">
       <Controls />
       <Hero />
       <Desktop />
