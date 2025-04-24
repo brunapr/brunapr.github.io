@@ -107,7 +107,7 @@ body {
 
 @keyframes mount-surge {
   0% {
-    transform: translateY(600px);
+    transform: translateY(var(--dvh));
   }
 
   100% {
@@ -121,7 +121,7 @@ body {
   }
 
   100% {
-    transform: translateY(600px);
+    transform: translateY(var(--dvh));
   }
 }
 
