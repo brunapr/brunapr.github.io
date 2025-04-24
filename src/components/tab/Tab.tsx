@@ -3,6 +3,7 @@ import { ReactNode, RefObject, useEffect, useRef, useState } from "react";
 import { Tab } from "../../stores/tabsStore";
 import useSound from "../../hooks/useSound";
 import { TranslationKey, useLocaleStore } from "../../stores/localeStore";
+import { useDrag } from "../../hooks/useDrag";
 
 interface Props {
   title: string;
@@ -24,100 +25,27 @@ export default function TabContainer({
   children,
 }: Props) {
   const handleRef = useRef<HTMLDivElement>(null);
-  const startPos = useRef({ x: 0, y: 0 });
-  const mouseStartPos = useRef({ x: 0, y: 0 });
-  const { t } = useLocaleStore()
-  const closeTabSound = useSound('/assets/sounds/close.wav');
-
-  const [width, setWidth] = useState(0)
-  const [isDragging, setIsDragging] = useState(false);
-
+  const { t } = useLocaleStore();
+  const closeTabSound = useSound('/assets/sounds/pop.mp3');
+  const { isDragging } = useDrag(ref, handleRef, tab, setTab);
+  const [width, setWidth] = useState(0);
   const id = "tab_" + title;
 
   function handleCloseTab(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+    console.log("oi")
     e.stopPropagation();
-    closeTabSound()
-    ref.current?.classList.add("unmount-bounce")
+    closeTabSound();
+    ref.current?.classList.add("unmount-bounce");
     setTimeout(() => {
-      ref.current?.classList.remove("unmount-bounce")
+      ref.current?.classList.remove("unmount-bounce");
       toggle?.();
-    }, 100)
+    }, 100);
   }
 
   useEffect(() => {
-    const parent = ref?.current;
-    const handle = handleRef.current;
-
-    if (!parent || !handle) return;
-
-    const onMouseDown = (e: MouseEvent) => {
-      e.preventDefault();
-      e.stopImmediatePropagation()
-      e.stopPropagation();
-      setIsDragging(true);
-
-      // Captura a posição atual da div
-      const rect = parent.getBoundingClientRect();
-      startPos.current = {
-        x: rect.left,
-        y: rect.top
-      };
-
-      // Captura a posição inicial do mouse
-      mouseStartPos.current = {
-        x: e.clientX,
-        y: e.clientY
-      };
-
-      parent.style.cursor = "grabbing";
-      document.body.style.userSelect = "none";
-    };
-
-    const onMouseMove = (e: MouseEvent) => {
-      if (!isDragging) return;
-
-      // Calcula o deslocamento do mouse
-      const dx = e.clientX - mouseStartPos.current.x;
-      const dy = e.clientY - mouseStartPos.current.y;
-
-      // Aplica o deslocamento à posição original
-      parent.style.left = `${startPos.current.x + dx}px`;
-      parent.style.top = `${startPos.current.y + dy}px`;
-    };
-
-    const onMouseUp = () => {
-      setIsDragging(false);
-      if (parent) {
-        parent.style.cursor = "";
-      }
-      document.body.style.userSelect = "";
-
-      // Atualiza a store se necessário
-      if (setTab && tab && parent) {
-        const rect = parent.getBoundingClientRect();
-        setTab({
-          ...tab,
-          x: rect.left,
-          y: rect.top
-        });
-      }
-    };
-
-    handle.addEventListener("mousedown", onMouseDown);
-    document.addEventListener("mousemove", onMouseMove);
-    document.addEventListener("mouseup", onMouseUp);
-
-    return () => {
-      handle.removeEventListener("mousedown", onMouseDown);
-      document.removeEventListener("mousemove", onMouseMove);
-      document.removeEventListener("mouseup", onMouseUp);
-    };
-  }, [isDragging, tab, setTab]);
-
-  useEffect(() => {
-    const element = document.getElementById(id)
-    if (element) setWidth(element.offsetWidth)
-  }, [tab?.open])
+    const element = document.getElementById(id);
+    if (element) setWidth(element.offsetWidth);
+  }, [tab?.open, id]);
 
   if (!tab?.open) return null;
 
@@ -126,11 +54,12 @@ export default function TabContainer({
       id={id}
       ref={ref}
       style={{
-        top: tab ? tab.y ?? 100 : undefined,
-        left: tab ? tab.x ?? 100 : undefined,
+        top: tab?.y ?? 100,
+        left: tab?.x ?? 100,
         zIndex: tab?.z,
         position: "absolute",
         cursor: isDragging ? "grabbing" : "default",
+        touchAction: "none",
       }}
       className={`mount-bounce z-[2] bg-slate-700 flex flex-col rounded-lg md:border-3 border-slate-800 dark:border-slate-800 select-none`}
     >
@@ -140,7 +69,10 @@ export default function TabContainer({
       >
         <span>{t(title as TranslationKey)}</span>
         <button
-          onClick={(e) => handleCloseTab(e)}
+          onClick={handleCloseTab}
+          onTouchEnd={() => handleCloseTab}
+          type="button"
+          aria-label="Close"
           className="cursor-pointer hover:bg-slate-100/10 rounded-full p-1 mr-[-8px]"
         >
           <X size={18} strokeWidth={4} />

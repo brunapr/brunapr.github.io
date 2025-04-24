@@ -14,7 +14,7 @@ import { useThemeStore } from "./stores/themeStore"
 function App() {
   const { theme } = useThemeStore()
   const { closeAllTabs } = useTabsStore()
-  const isMobile = useMediaQuery('(width <= 48rem)')
+  const isMobile = useMediaQuery('(width < 48rem)')
 
   useEffect(() => {
     if (isMobile) {
@@ -23,7 +23,7 @@ function App() {
   }, [isMobile]);
 
   return (
-    <div id="home" data-theme={theme} className="w-screen h-screen bg-slate-800 flex justify-center">
+    <div id="home" data-theme={theme} className="w-screen h-[100dvh] bg-slate-800 flex justify-center">
       <Controls />
       <Hero />
       <Desktop />

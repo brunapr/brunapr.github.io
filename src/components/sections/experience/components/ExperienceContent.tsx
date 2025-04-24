@@ -3,11 +3,11 @@ import ExperienceItem from "./ExperienceItem";
 
 export default function ExperienceContent() {
   return (
-    <div className="w-full flex flex-col space-y-6 max-h-[600px] h-full overflow-y-auto">
+    <div className="w-full flex flex-col space-y-6 md:max-h-[600px] h-full overflow-y-auto">
       {
-        experiences.map((experience: ExperienceData) => {
+        experiences.map((experiences: ExperienceData) => {
           return (
-            <ExperienceItem key={"experience_" + experience.title} experience={experience} />
+            <ExperienceItem key={"experience_" + experiences.title} experiences={experiences} />
           );
         })
       }

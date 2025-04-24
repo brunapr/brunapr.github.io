@@ -8,7 +8,7 @@ import TabContainerMobile from "../../tab/TabMobile";
 export default function Technologies() {
   const { skills, toggleTab } = useTabsStore()
   const ref = useRef<HTMLDivElement>(null);
-  const isMobile = useMediaQuery('(width <= 48rem)');
+  const isMobile = useMediaQuery('(width < 48rem)');
 
   const props = {
     title: "skills",

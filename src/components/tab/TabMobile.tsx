@@ -21,7 +21,7 @@ export default function TabContainerMobile({
 }: Props) {
   const handleRef = useRef<HTMLDivElement>(null);
   const { t } = useLocaleStore()
-  const closeTabSound = useSound('/assets/sounds/close.wav');
+  const closeTabSound = useSound('/assets/sounds/pop.mp3');
 
   const id = "tab_" + title;
 
@@ -41,11 +41,11 @@ export default function TabContainerMobile({
     <div
       id={id}
       ref={ref}
-      className={`mount-surge w-screen absolute left-0 bottom-0 max-h-[90%] h-fit z-[2] bg-slate-700 flex flex-col rounded-lg border-3 border-slate-800 dark:border-slate-800 select-none`}
+      className={`mount-surge w-screen absolute left-0 bottom-0 max-h-[calc(100vh-64px)] h-fit z-[2] bg-slate-700 flex flex-col rounded-lg border-3 border-slate-800 dark:border-slate-800 select-none`}
     >
       <div
         ref={handleRef}
-        className={`cursor-grab active:cursor-grabbing font-abz bg-violet-400 dark:bg-indigo-400 flex border-b-3 border-slate-800 text-slate-800 dark:text-slate-800 px-8 py-3 rounded-t-md tracking-wider w-full items-center justify-between`}
+        className={`cursor-grab active:cursor-grabbing font-abz bg-violet-400 dark:bg-indigo-400 flex border-b-3 border-slate-800 text-slate-800 dark:text-slate-800 px-4 md:px-8 py-3 rounded-t-md tracking-wider w-full items-center justify-between`}
       >
         <span>{t(title as TranslationKey)}</span>
         <button
@@ -56,7 +56,7 @@ export default function TabContainerMobile({
         </button>
       </div>
       <div
-        className={`w-full [&>*]:p-8 select-text bg-violet-100 h-full dark:bg-slate-700 text-slate-800 dark:text-slate-400 rounded-b-md flex flex-col items-center justify-center`}
+        className={`max-h-[calc(100vh-115px)] w-full h-full max-md:[&>*]:px-4 [&>*]:p-8 select-text bg-violet-100 dark:bg-slate-700 text-slate-800 dark:text-slate-400 rounded-b-md flex flex-col items-center justify-center`}
       >
         {children}
       </div>

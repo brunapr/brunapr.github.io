@@ -39,7 +39,7 @@ export default function Controls() {
   }
 
   return (
-    <Container className="absolute z-[1] flex space-x-1 md:space-x-2 !py-2 px-4">
+    <Container className="absolute z-[1] flex space-x-1 md:space-x-2 py-0 md:py-2 px-0 md:px-4 transition-all">
       <button
         type="button"
         ref={themeRef}
@@ -50,7 +50,7 @@ export default function Controls() {
           {
             theme === THEME.LIGHT ?
               <Sun className={iconStyle} strokeWidth={2.2} size={24} /> :
-              <Moon className={iconStyle} strokeWidth={2.2} size={24} />
+              <Moon className={iconStyle} strokeWidth={2.2} size={22} />
           }
         </div>
       </button>
@@ -76,8 +76,8 @@ export default function Controls() {
         <div>
           {
             locale === LOCALE.EN ?
-              <span className={`${iconStyle} font-mono text-xl px-0.5`}>EN</span> :
-              <span className={`${iconStyle} font-mono text-xl px-0.5`}>PT</span>
+              <span className={`${iconStyle} font-abz font-normal text-xl px-0.5`}>EN</span> :
+              <span className={`${iconStyle} font-abz font-normal text-xl px-0.5`}>PT</span>
           }
         </div>
       </button>

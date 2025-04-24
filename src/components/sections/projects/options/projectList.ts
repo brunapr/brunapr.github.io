@@ -11,60 +11,60 @@ export const projectsList: Project[] = [
     code: "doae",
     title: "Doaê",
     tags: "App • Web • UI/UX",
-    description: "Undergraduate Thesis Project aimed at encouraging blood donation at UFRJ."
+    description: "project_description_1"
   },
   {
     code: "caronae",
     title: "Caronaê",
     tags: "App",
     link: "https://caronae.org",
-    description: "Ridesharing system designed for the academic community of UFRJ."
+    description: "project_description_2"
   },
   {
     code: "noticeme",
     title: "Notice.me",
     tags: "App",
     link: "https://github.com/brunapr/Notice.me",
-    description: "Mobile application for quick notes and reminders."
+    description: "project_description_3"
   },
   {
     code: "nutrime",
     title: "Nutri.me",
     tags: "UI/UX",
     link: "https://www.behance.net/gallery/140113727/nutrime",
-    description: "Healthy menu solution that considers user's preferences and dietary restrictions."
+    description: "project_description_4"
   },
   {
     code: "cleanmarine",
     title: "Clean Marine",
     tags: "UI/UX",
-    description: "Aligned with SDG 14, it's a solution that seeks to encourage beach cleanups through gamification."
+    description: "project_description_5"
   },
   {
     code: "happy",
     title: "Happy",
     tags: "Web",
     link: "https://github.com/brunapr/Happy",
-    description: "Project created to better learn ReactJs, developed following NLW#3 videos."
+    description: "project_description_6"
   },
   {
     code: "lavanda",
     title: "Lavanda",
     tags: "UI/UX",
-    description: "Diary writing app where the goal is to track your personal development over months."
+    description: "project_description_7"
   },
   {
     code: "hommy",
     title: "Hommy",
     tags: "Web",
     link: "https://github.com/brunapr/hommy-landing",
-    description: "Technical training challenge landing page project for EJCM."
+    description: "project_description_8"
   },
   {
     code: "pokefile",
     title: "Pokéfile",
     tags: "Web",
     link: "https://github.com/andradenathan/pokefile",
-    description: "Pokémon platform where users can save Pokémon and display their profile to friends."
+    description: "project_description_9"
   },
 ]

@@ -8,7 +8,7 @@ import { useMediaQuery } from "../../../hooks/useMediaQuery";
 export default function About() {
   const ref = useRef<HTMLDivElement>(null);
   const { about, toggleTab } = useTabsStore()
-  const isMobile = useMediaQuery('(width <= 48rem)');
+  const isMobile = useMediaQuery('(width < 48rem)');
 
   const props = {
     title: "about",
@@ -21,6 +21,6 @@ export default function About() {
   return isMobile ? (
     <TabContainerMobile {...props} />
   ) : (
-    <TabContainer maxWidth="max-w-[600px]" {...props} />
+    <TabContainer maxWidth="max-w-[594px]" {...props} />
   );
 }

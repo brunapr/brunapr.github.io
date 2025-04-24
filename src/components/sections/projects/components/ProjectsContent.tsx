@@ -3,7 +3,7 @@ import ProjectItem from "./ProjectItem";
 
 export default function ProjectsContent() {
   return (
-    <div className={`w-full flex flex-col space-y-8 max-h-[600px] overflow-y-auto pr-4`}>
+    <div className={`w-full flex flex-col space-y-10 md:space-y-10 md:max-h-[600px] overflow-y-auto pr-4`}>
       {
         projectsList.map((project: Project) => {
           return (

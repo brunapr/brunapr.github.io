@@ -10,7 +10,7 @@ export interface Tab {
 interface TabsStore {
   about: Tab;
   skills: Tab;
-  experience: Tab;
+  experiences: Tab;
   projects: Tab;
   getHighestZIndex: () => number;
   getTab: (tabName: TabList) => Tab;
@@ -42,7 +42,7 @@ function getRandomPosition() {
 export const useTabsStore = create<TabsStore>()((set, get) => ({
   about: initialValue,
   skills: initialValue,
-  experience: initialValue,
+  experiences: initialValue,
   projects: initialValue,
 
   setTab: (tabName, tab) => set({ [tabName]: tab }),
@@ -54,7 +54,7 @@ export const useTabsStore = create<TabsStore>()((set, get) => ({
     return Math.max(
       state.about.z,
       state.skills.z,
-      state.experience.z,
+      state.experiences.z,
       state.projects.z
     );
   },
@@ -64,7 +64,7 @@ export const useTabsStore = create<TabsStore>()((set, get) => ({
       const currentHighestZ = Math.max(
         state.about.z,
         state.skills.z,
-        state.experience.z,
+        state.experiences.z,
         state.projects.z
       );
 
@@ -85,6 +85,6 @@ export const useTabsStore = create<TabsStore>()((set, get) => ({
     about: initialValue,
     skills: initialValue,
     projects: initialValue,
-    experience: initialValue,
+    experiences: initialValue,
   }),
 }));

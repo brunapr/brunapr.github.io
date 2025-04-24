@@ -15,6 +15,7 @@ interface LocaleStore {
   toggleLocale: () => void;
   t: (key: TranslationKey) => string;
 }
+
 function isLocale(value: string | null): value is LOCALE {
   return value === LOCALE.EN || value === LOCALE.PT;
 }

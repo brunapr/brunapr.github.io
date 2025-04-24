@@ -8,7 +8,7 @@ import TabContainerMobile from "../../tab/TabMobile";
 export default function Projects() {
   const { projects, toggleTab } = useTabsStore()
   const ref = useRef<HTMLDivElement>(null);
-  const isMobile = useMediaQuery('(width <= 48rem)');
+  const isMobile = useMediaQuery('(width < 48rem)');
 
   const props = {
     title: "projects",
@@ -21,6 +21,6 @@ export default function Projects() {
   return isMobile ? (
     <TabContainerMobile {...props} />
   ) : (
-    <TabContainer maxWidth="max-w-[500px]" {...props} />
+    <TabContainer maxWidth="max-w-[400px]" {...props} />
   );
 }

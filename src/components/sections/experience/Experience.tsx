@@ -6,15 +6,15 @@ import TabContainerMobile from "../../tab/TabMobile";
 import { useMediaQuery } from "../../../hooks/useMediaQuery";
 
 export default function Experience() {
-  const { experience, toggleTab } = useTabsStore()
+  const { experiences, toggleTab } = useTabsStore()
   const ref = useRef<HTMLDivElement>(null);
-  const isMobile = useMediaQuery('(width <= 48rem)');
+  const isMobile = useMediaQuery('(width < 48rem)');
 
   const props = {
-    title: "experience",
+    title: "experiences",
     ref: ref,
-    tab: experience,
-    toggle: () => toggleTab("experience"),
+    tab: experiences,
+    toggle: () => toggleTab("experiences"),
     children: <ExperienceContent />
   };
 

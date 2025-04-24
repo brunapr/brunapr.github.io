@@ -23,20 +23,20 @@ export default function AboutContent() {
   const iconClass = "group-hover:text-slate-100 group-hover:fill-slate-100 dark:text-slate-400 text-slate-800 dark:fill-slate-400 fill-slate-800"
 
   return (
-    <div className="max-h-[600px] h-full overflow-y-auto overflow-x-hidden">
-      <div className="flex items-center space-x-6 w-full">
+    <div className={`md:max-h-[600px] h-full overflow-y-auto overflow-x-hidden`}>
+      <div className="flex max-md:flex-col items-center md:space-x-6 w-full">
         <img
           src={`/assets/about/${theme === THEME.LIGHT ? "violet" : "indigo"}.png`}
           alt="pixel art drawing of bruna"
           className="rounded-full w-40 h-40"
         />
-        <div className="flex flex-col space-y-1 h-40 justify-center">
-          <h1 className="text-5xl font-abz dark:text-indigo-400 text-violet-400">Bruna Pimenta</h1>
-          <span className="font-abz italic text-slate-400 dark:text-slate-500 leading-5 text-sm">{t("about_subtitle")}</span>
+        <div className="flex flex-col space-y-1 max-md:my-6 md:h-40 justify-center">
+          <h1 className="max-md:text-center text-5xl font-abz dark:text-indigo-400 text-violet-400">Bruna Pimenta</h1>
+          <span className="max-md:text-center font-abz italic text-slate-400 dark:text-slate-500 leading-5 text-sm">{t("about_subtitle")}</span>
         </div>
       </div>
-      <div className="space-y-4 mt-10 font-mono">
-        <p>{t("about_1")} <span className="dark:bg-indigo-400 dark:text-slate-800 bg-violet-400">{t("about_2")}</span> {t("about_3")} <span className="border-b">UFRJ</span> {t("about_4")} <span className="border-b">EJCM</span>{t("about_5")}
+      <div className="space-y-4 md:mt-10 font-mono max-md:text-justify">
+        <p>{t("about_1")} <span className="px-1 dark:bg-indigo-400 text-violet-100 dark:text-slate-800 bg-violet-400">{t("about_2")}</span> {t("about_3")} <span className="border-b">UFRJ</span> {t("about_4")} <span className="border-b">EJCM</span>{t("about_5")}
         </p>
         <p>{t("about_6")} <span className="text-stroke">{t("about_7")}</span>{t("about_8")} <b className="dark:text-indigo-400 text-violet-400">{t("about_9")}</b>!
         </p>
@@ -45,11 +45,9 @@ export default function AboutContent() {
       <div className="flex w-full space-x-4 mt-10">
         <ContactButton>
           <Linkedin className={`${iconClass} mb-1`} size={22} />
-          {/* <span>linkedin</span> */}
         </ContactButton>
         <ContactButton>
           <Github className={`${iconClass}`} size={22} />
-          {/* <span>github</span> */}
         </ContactButton>
       </div>
     </div>
