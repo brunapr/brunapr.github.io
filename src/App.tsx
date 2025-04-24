@@ -10,11 +10,13 @@ import Technologies from "./components/sections/technologies/Technologies"
 import { useMediaQuery } from "./hooks/useMediaQuery"
 import { useTabsStore } from "./stores/tabsStore"
 import { useThemeStore } from "./stores/themeStore"
+import { useViewportHeight } from "./hooks/useViewportHeight"
 
 function App() {
   const { theme } = useThemeStore()
   const { closeAllTabs } = useTabsStore()
   const isMobile = useMediaQuery('(width < 48rem)')
+  useViewportHeight()
 
   useEffect(() => {
     if (isMobile) {
@@ -23,7 +25,7 @@ function App() {
   }, [isMobile]);
 
   return (
-    <div id="home" data-theme={theme} className="w-screen h-dvh bg-slate-800 flex justify-center">
+    <div id="home" data-theme={theme} className="w-screen h-[var(--dvh)] bg-slate-800 flex justify-center">
       <Controls />
       <Hero />
       <Desktop />

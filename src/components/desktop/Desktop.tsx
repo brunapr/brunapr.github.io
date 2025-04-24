@@ -23,10 +23,11 @@ function DesktopButton({ title, ref, Icon }: Button) {
     if (tab.open) return
 
     toggleTab(title);
+    openTabSound()
+    
     const element = ref.current
-
+    
     if (element) {
-      openTabSound()
       const children = Array.from(element.children) as HTMLElement[];
       children.forEach((child) => {
         child.classList.add("click-bounce");

@@ -41,7 +41,7 @@ export default function TabContainerMobile({
     <div
       id={id}
       ref={ref}
-      className={`mount-surge w-screen absolute left-0 bottom-0 max-h-[calc(100dvh-64px)] h-fit z-[2] bg-slate-700 flex flex-col rounded-lg border-3 border-slate-800 dark:border-slate-800 select-none`}
+      className={`mount-surge w-screen absolute left-0 bottom-0 max-h-[calc(var(--dvh)-64px)] h-fit z-[2] bg-slate-700 flex flex-col rounded-lg border-3 border-slate-800 dark:border-slate-800 select-none`}
     >
       <div
         ref={handleRef}
@@ -56,7 +56,7 @@ export default function TabContainerMobile({
         </button>
       </div>
       <div
-        className={`max-h-[calc(100dvh-115px)] w-full h-full max-md:[&>*]:px-4 [&>*]:p-8 select-text bg-violet-100 dark:bg-slate-700 text-slate-800 dark:text-slate-400 rounded-b-md flex flex-col items-center justify-center`}
+        className={`max-h-[calc(var(--dvh)-115px)] w-full h-full max-md:[&>*]:px-4 [&>*]:p-8 select-text bg-violet-100 dark:bg-slate-700 text-slate-800 dark:text-slate-400 rounded-b-md flex flex-col items-center justify-center`}
       >
         {children}
       </div>
