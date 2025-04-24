@@ -14,7 +14,7 @@ body {
   place-items: center;
   overflow: hidden;
   min-width: 100vw;
-  min-height: 100vh, 100dvh;
+  min-height: 100dvh;
   font-family: var(--font-mono);
   font-weight: 600;
   color: oklch(27.9% 0.041 260.031);
