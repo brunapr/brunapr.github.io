@@ -1,5 +1,5 @@
 import { ChevronDown } from "lucide-react";
-import { ReactNode, RefObject, useRef } from "react";
+import { ReactNode, RefObject, useEffect, useRef, useState } from "react";
 import { Tab } from "../../stores/tabsStore";
 import useSound from "../../hooks/useSound";
 import { TranslationKey, useLocaleStore } from "../../stores/localeStore";
@@ -22,6 +22,7 @@ export default function TabContainerMobile({
   const handleRef = useRef<HTMLDivElement>(null);
   const { t } = useLocaleStore()
   const closeTabSound = useSound('/assets/sounds/pop.mp3');
+  const [ height, setHeight ] = useState(0);
 
   const id = "tab_" + title;
 
@@ -35,13 +36,29 @@ export default function TabContainerMobile({
     }, 100)
   }
 
+  useEffect(() => {
+    const adjustHeight = () => {
+      const viewportHeight = window.innerHeight;
+      setHeight(viewportHeight)
+    };
+  
+    adjustHeight();
+    
+    window.addEventListener('resize', adjustHeight);
+    
+    return () => {
+      window.removeEventListener('resize', adjustHeight);
+    };
+  }, []);
+
   if (!tab?.open) return null;
 
   return (
     <div
       id={id}
       ref={ref}
-      className={`mount-surge w-screen absolute left-0 bottom-0 max-h-[calc(var(--dvh)-64px)] h-fit z-[2] bg-slate-700 flex flex-col rounded-lg border-3 border-slate-800 dark:border-slate-800 select-none`}
+      style={{maxHeight: height - 64}}
+      className={`mount-surge w-screen absolute left-0 bottom-0 h-fit z-[2] bg-slate-700 flex flex-col rounded-lg border-3 border-slate-800 dark:border-slate-800 select-none`}
     >
       <div
         ref={handleRef}
@@ -56,7 +73,8 @@ export default function TabContainerMobile({
         </button>
       </div>
       <div
-        className={`max-h-[calc(var(--dvh)-115px)] w-full h-full max-md:[&>*]:px-4 [&>*]:p-8 select-text bg-violet-100 dark:bg-slate-700 text-slate-800 dark:text-slate-400 rounded-b-md flex flex-col items-center justify-center`}
+        style={{maxHeight: height - 115}}
+        className={`w-full h-full [&>*]:px-4 [&>*]:py-8 select-text bg-violet-100 dark:bg-slate-700 text-slate-800 dark:text-slate-400 rounded-b-md flex flex-col items-center justify-center`}
       >
         {children}
       </div>
