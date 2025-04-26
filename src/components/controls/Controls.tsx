@@ -30,7 +30,6 @@ export default function Controls() {
 
       children.forEach((child) => {
         child.classList.add("click-bounce");
-        console.log(child.classList)
         setTimeout(() => {
           child.classList.remove("click-bounce");
         }, 500);

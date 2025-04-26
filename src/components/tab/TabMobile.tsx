@@ -37,19 +37,9 @@ export default function TabContainerMobile({
   }
 
   useEffect(() => {
-    const adjustHeight = () => {
-      const viewportHeight = window.innerHeight;
-      setHeight(viewportHeight)
-    };
-  
-    adjustHeight();
-    
-    window.addEventListener('resize', adjustHeight);
-    
-    return () => {
-      window.removeEventListener('resize', adjustHeight);
-    };
-  }, []);
+    const viewportHeight = window.innerHeight;
+    setHeight(viewportHeight > 0 ? viewportHeight : 600)
+  }, [tab?.open]);
 
   if (!tab?.open) return null;
 

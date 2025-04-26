@@ -32,7 +32,6 @@ export default function TabContainer({
   const id = "tab_" + title;
 
   function handleCloseTab(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
-    console.log("oi")
     e.stopPropagation();
     closeTabSound();
     ref.current?.classList.add("unmount-bounce");
