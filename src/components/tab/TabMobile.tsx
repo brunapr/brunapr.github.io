@@ -63,7 +63,7 @@ export default function TabContainerMobile({
         </button>
       </div>
       <div
-        style={{maxHeight: height - 115}}
+        style={{maxHeight: height > 0 ? (height - 115) : 200}}
         className={`w-full h-full [&>*]:px-4 [&>*]:py-8 select-text bg-violet-100 dark:bg-slate-700 text-slate-800 dark:text-slate-400 rounded-b-md flex flex-col items-center justify-center`}
       >
         {children}
