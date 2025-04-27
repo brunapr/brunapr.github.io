@@ -37,9 +37,13 @@ export default function TabContainerMobile({
   }
 
   useEffect(() => {
-    const viewportHeight = window.innerHeight;
-    setHeight(viewportHeight > 0 ? viewportHeight : 600)
-  }, [tab?.open]);
+    if(tab && tab.open) {
+      const elementHeight = document.getElementById(title+"_content")?.scrollHeight
+      const screenHeight = window.innerHeight
+      const constraint = elementHeight && (elementHeight < screenHeight - 115)
+      setHeight(constraint ? elementHeight : screenHeight - 115)
+    }
+  }, [tab?.open])
 
   if (!tab?.open) return null;
 
@@ -47,7 +51,6 @@ export default function TabContainerMobile({
     <div
       id={id}
       ref={ref}
-      style={{maxHeight: height - 64}}
       className={`mount-surge w-screen absolute left-0 bottom-0 h-fit z-[2] bg-slate-700 flex flex-col rounded-lg border-3 border-slate-800 dark:border-slate-800 select-none`}
     >
       <div
@@ -63,8 +66,8 @@ export default function TabContainerMobile({
         </button>
       </div>
       <div
-        style={{maxHeight: height > 0 ? (height - 115) : 200}}
-        className={`w-full h-full [&>*]:px-4 [&>*]:py-8 select-text bg-violet-100 dark:bg-slate-700 text-slate-800 dark:text-slate-400 rounded-b-md flex flex-col items-center justify-center`}
+        style={{height}}
+        className={`w-full [&>*]:px-4 [&>*]:py-8 select-text bg-violet-100 dark:bg-slate-700 text-slate-800 dark:text-slate-400 rounded-b-md flex flex-col items-center justify-center`}
       >
         {children}
       </div>

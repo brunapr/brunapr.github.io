@@ -10,7 +10,7 @@ export default function TechnologiesContent() {
   ]
 
   return (
-    <div className="flex flex-col space-y-6 md:space-x-4 max-md:w-full w-fit">
+    <div id="skills_content" className="flex flex-col space-y-6 md:space-x-4 max-md:w-full w-fit">
       {
         techs.map(({ name, width }, index) => {
           return (
