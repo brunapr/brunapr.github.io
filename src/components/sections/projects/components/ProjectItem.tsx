@@ -8,7 +8,7 @@ export default function ProjectItem({ project }: { project: Project }) {
   return (
     <div className="group relative rounded-lg flex flex-col space-y-3 items-center w-full transition-all">
       <div className="flex space-x-10 font-mono aspect-video rounded-lg w-full transition-all">
-        <img src={`/assets/projects/${code}.png`} alt={"Projeto " + title} className="w-full h-auto object-cover rounded-lg" />
+        <img src={`/assets/projects/${code}.webp`} alt={"Projeto " + title} className="w-full h-auto object-cover rounded-lg" />
       </div>
       <div className="w-full flex flex-col justify-between transition-all">
         <div className="flex flex-col w-full">

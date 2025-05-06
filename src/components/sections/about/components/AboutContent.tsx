@@ -26,9 +26,9 @@ export default function AboutContent() {
     <div id="about_content" className={`md:max-h-[600px] h-fit overflow-y-auto overflow-x-hidden`}>
       <div className="flex max-md:flex-col items-center md:space-x-6 w-full">
         <img
-          src={`/assets/about/${theme === THEME.LIGHT ? "violet" : "indigo"}.png`}
+          src={`/assets/about/${theme === THEME.LIGHT ? "violet" : "indigo"}.webp`}
           alt="pixel art drawing of bruna"
-          className="rounded-full w-40 h-40"
+          className="rounded-full w-40 h-40 bg-slate-800"
         />
         <div className="flex flex-col space-y-1 max-md:my-6 md:h-40 justify-center">
           <h1 className="max-md:text-center text-5xl font-abz dark:text-indigo-400 text-violet-400">Bruna Pimenta</h1>

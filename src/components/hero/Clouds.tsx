@@ -3,21 +3,21 @@ export function Clouds() {
 
   const clouds = [
     {
-      src: "/assets/cloud_3.svg",
+      src: "/assets/hero/cloud_3.svg",
       move: "-10",
       duration: "8s",
       className: `${commonStyle} left-[-5rem] top-10 scale-80 lg:scale-80 lg:left-0 lg:top-10`,
       alt: "top left cloud"
     },
     {
-      src: "/assets/cloud_2.svg",
+      src: "/assets/hero/cloud_2.svg",
       move: "5",
       duration: "10s",
       className: `${commonStyle} bottom-6 left-[-10rem] scale-80 lg:scale-80 lg:bottom-10`,
       alt: "bottom left cloud"
     },
     {
-      src: "/assets/cloud_1.svg",
+      src: "/assets/hero/cloud_1.svg",
       move: "15",
       duration: "6s",
       className: `${commonStyle} right-[-10rem] md:right-[-4rem] bottom-46 scale-80 lg:scale-80`,
