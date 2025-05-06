@@ -6,11 +6,11 @@ export default function ProjectItem({ project }: { project: Project }) {
   const { title, code, tags, description, link } = project
 
   return (
-    <div className="group relative rounded-lg flex flex-col space-y-3 items-center w-full transition-all">
-      <div className="flex space-x-10 font-mono aspect-video rounded-lg w-full transition-all">
+    <div className="group relative rounded-lg flex flex-col space-y-3 xs:max-md:flex-row xs:max-md:space-y-0 xs:max-md:space-x-4 items-center xs:max-md:items-start w-full transition-all">
+      <div className="flex space-x-10 font-mono aspect-video xs:max-md:aspect-square rounded-lg w-full xs:max-md:w-46 sm:max-md:aspect-video sm:max-md:w-96 transition-all">
         <img src={`/assets/projects/${code}.webp`} alt={"Projeto " + title} className="w-full h-auto object-cover rounded-lg" />
       </div>
-      <div className="w-full flex flex-col justify-between transition-all">
+      <div className="w-full flex flex-col justify-between xs:max-md:h-full transition-all">
         <div className="flex flex-col w-full">
           <div className="flex space-x-2 items-center">
             <h1 className="font-abz text-violet-400 dark:text-indigo-400">{title}</h1>

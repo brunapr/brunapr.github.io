@@ -6,15 +6,16 @@
 @theme {
   --font-mono: "PT Mono", monospace;
   --font-abz: "ABeeZee", sans-serif;
+  --breakpoint-xs: 28rem;
 }
 
 :root {
-  --dvh: 100vh; 
+  --dvh: 100vh;
 }
 
 @supports (height: 100dvh) {
   :root {
-    --dvh: 100dvh; 
+    --dvh: 100dvh;
   }
 }
 
