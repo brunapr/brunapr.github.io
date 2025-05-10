@@ -3,15 +3,15 @@ import { THEME, useThemeStore } from "../../../../stores/themeStore";
 import { Linkedin, Github } from "lucide-react";
 import { useLocaleStore } from "../../../../stores/localeStore";
 
-function ContactButton({ children }: { children: ReactNode }) {
+function ContactButton({ link, Icon }: { link: string, Icon: ReactNode }) {
   return (
     <a
-      href="https://github.com/brunapr"
+      href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className="group rounded-lg bg-violet-300 dark:bg-slate-600 hover:text-slate-100 flex p-3 px-4 items-center justify-center space-x-3 hover:bg-violet-400 hover:dark:bg-indigo-400 transition"
+      className="group rounded-lg bg-violet-300 dark:bg-slate-600 hover:text-slate-100 flex p-4 items-center justify-center space-x-3 hover:bg-violet-400 hover:dark:bg-indigo-400 transition"
     >
-      {children}
+      {Icon}
     </a>
   );
 }
@@ -20,7 +20,15 @@ export default function AboutContent() {
   const { theme } = useThemeStore()
   const { t } = useLocaleStore()
 
-  const iconClass = "group-hover:text-slate-100 group-hover:fill-slate-100 dark:text-slate-400 text-slate-800 dark:fill-slate-400 fill-slate-800"
+  const iconProps = {
+    className: "group-hover:text-slate-100 group-hover:fill-slate-100 dark:text-slate-400 text-slate-800 dark:fill-slate-400 fill-slate-800",
+    size: 22
+  }
+
+  const contacts = [
+    {Icon: <Linkedin {...iconProps}/>, link: "https://www.linkedin.com/in/prbruna"},
+    {Icon: <Github {...iconProps}/>, link: "https://github.com/brunapr"},
+  ]
 
   return (
     <div id="about_content" className={`md:max-h-[600px] h-fit overflow-y-auto overflow-x-hidden`}>
@@ -43,12 +51,11 @@ export default function AboutContent() {
         <p>email: <span className="border-b">rbrmnt@gmail.com</span></p>
       </div>
       <div className="flex w-full space-x-4 mt-10">
-        <ContactButton>
-          <Linkedin className={`${iconClass} mb-1`} size={22} />
-        </ContactButton>
-        <ContactButton>
-          <Github className={`${iconClass}`} size={22} />
-        </ContactButton>
+        {contacts.map(({link, Icon}, index) => {
+          return(
+            <ContactButton key={"contact_"+index} link={link} Icon={Icon}/>
+          );
+        })}
       </div>
     </div>
   );
